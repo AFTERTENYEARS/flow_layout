@@ -1,0 +1,16 @@
+PODS:
+  - MyLayout (1.7.0)
+
+DEPENDENCIES:
+  - MyLayout
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MyLayout
+
+SPEC CHECKSUMS:
+  MyLayout: c04c3f0cae45dae74bc6e0a271f6334209327bc4
+
+PODFILE CHECKSUM: 42ef0f72dee989e9b0cbf750620cc41646c8293a
+
+COCOAPODS: 1.5.3

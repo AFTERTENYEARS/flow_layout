@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02D540DCD36104B25D8DECF562378240 /* MyBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DE107A527EFD97CF5A2B35954B311F94 /* MyBaseLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		07756E3E494A2A6CAA5B31F0BF77F51B /* MyLayoutInner.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C72FA913CA09DBD465FCF4AEDD96A2 /* MyLayoutInner.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		08B87FA2BFF9864270D89553A58B7D85 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D0CEB8BEA05BFAB2089D37613E4B91 /* MyFlowLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0AEE3FE15B35F1DFEBFBC9D7FA7BB963 /* MyPathLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AD873436B334918B82710FCE06ABED4F /* MyPathLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0CF9AA374468BC5370398CBD0B3260C6 /* MyLinearLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F0B16647C709CE94A7AB2AF395FE96 /* MyLinearLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		11166CC435F579CC901325F9809A947B /* MyLayoutMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 62959E0E6C20D544E3DF84E762EEFC82 /* MyLayoutMath.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		12AEAF637B2D5A487FA1E9DFF2B26832 /* MyLayoutSizeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4D88E1B25D098ACFFB64156FFA4BB6 /* MyLayoutSizeClass.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1BAD1AB331F60A34FB4C5A5D794AB8F0 /* MyFrameLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9133181CED9380515C769D713C08D8AF /* MyFrameLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C28432EC714AD05F13331715AC63078 /* MyGrid.h in Headers */ = {isa = PBXBuildFile; fileRef = E1FD94F17EC69C8DBA22401F83D8BCD3 /* MyGrid.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2047E06F9E0B6B37F8B5DE7C9CF6CF0C /* MyTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4B5C92BEF17E9AFCBCA80C13311F1E /* MyTableLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2889507A0F27C615B61A4402C2157125 /* MyTableLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 785F7418F623FBA96CA241ACD6D5869B /* MyTableLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D5F9BCE745333FC5FB3A8F2FC4DE615 /* MyGridLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 89961E4244FAEB09454564C76C4431BF /* MyGridLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		308F81194BB4BB4FCF9AD59E7D3D4A5A /* MyFloatLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D8C89A152D088A4C3CB96DF884EDA31 /* MyFloatLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3BC2B37A0AF757DC196FE38CD97A4993 /* MyBorderline.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A8E216BEC9B7009223E921C8E8B35 /* MyBorderline.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3DEF4A5259B51F891212F5D5AEAD3B42 /* MyLayoutSizeClass.h in Headers */ = {isa = PBXBuildFile; fileRef = B441D308B455E69DFF98A4815D9A5F12 /* MyLayoutSizeClass.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E13BB3ECA8216E82E0553AC360208DD /* MyBaseLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8A56E8CCB0FA2274191CB8E8636BC1 /* MyBaseLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		50AFF45BB148913753C8A14F84224948 /* Pods-SKbase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE09A9965540C6B4B97971696066E47 /* Pods-SKbase-dummy.m */; };
+		50C903945950800FF9109093AA55F433 /* MyGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A6AD92EA307F634EA96D9631637AF2 /* MyGridLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		552D62AF6A83BE3E57F620585CAE9C46 /* MyRelativeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA22717EED5D2A350736E4498F971A64 /* MyRelativeLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		60AE71386E2841521E8CD89467C534D3 /* MyLayoutDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C846200FB67A5127F35A71B18CA6ECA /* MyLayoutDef.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		756A74377FC303B5DBE6B56A0EAF0051 /* MyLayoutDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D1914CCBE707307FDD34D8F68FBDE69 /* MyLayoutDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7FE0A53C888E9DF8985E5DE0CDDC4275 /* MyLayoutMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 453EE88BAE6631E462ECDEF6B4027A44 /* MyLayoutMath.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8022CE5D1F5A09EE9D5C05896F38A03E /* MyGridNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 288E82A5C60842F38D3E3CC54C9C199B /* MyGridNode.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		865CF7CA62F6753D2FC3B0001DD3909D /* MyBorderline.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E88FB169809545AA9867DFFEE629BA /* MyBorderline.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8B9E35BA167B07474D28D732C3CC898B /* MyDimeScale.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAE22C4F78076700B10FCE55E05FD69 /* MyDimeScale.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8E451D050938B95444FF60AA0DFD67FA /* MyFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 72018D9633A47B610FA22DA41515E103 /* MyFlowLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91961FB0C48889395A79563539482BD9 /* MyGridNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5964890E2F08F9813F3D98CA29C336 /* MyGridNode.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9EDB80514C29514FE9DBE758A8F3A62A /* MyLayoutSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D28033A456D2FC499AC911B86E63ABB /* MyLayoutSize.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A84BA86CF1CDDD6142005C1C9161CD75 /* MyLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D983032A7F0C574C4871B30CD5B6404A /* MyLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AAD258719E5F913B2B0319A352C4144A /* MyDimeScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B561987059D0DD9D795076614E87720 /* MyDimeScale.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		ABDA17711F59E20871FD7EE73E1AD8F4 /* MyLayoutDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA92FAB6555A5269068CF7BD49BC924D /* MyLayoutDelegate.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B954D9FAA20EF8D5AD8F6CB0EB5E773A /* MyLayoutPos.m in Sources */ = {isa = PBXBuildFile; fileRef = F0118FC26614020BD4C6015321BBF1A0 /* MyLayoutPos.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BD7FD66819C9714687EF57B231D98320 /* MyMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9AAFD68BBB440F63368A15CB21FB68 /* MyMaker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C91578DE2608D3F6B4DDC4E5317E8E35 /* MyLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66214C0FE9F771C44D9256F62B810432 /* MyLayout-dummy.m */; };
+		D49DB0FBF78E69791D04985A0B7D412E /* MyMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 034F03DB16F03AC8082C537140048583 /* MyMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D4D103131FB4975840DE86D0AC4693D9 /* MyLayoutPosInner.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DC9D29490E0142BEA7191ED56895916 /* MyLayoutPosInner.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D81669EF0BE77B8C82B05D6CBE10E4D4 /* MyFrameLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5504F1BAAA207B8A61110D5E72BD0F01 /* MyFrameLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EDB5C531F3EBD5DCD8F29F8DDC96A6B3 /* MyLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE35F5D175F08F702DB156D8BE47F1E /* MyLinearLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EEDB16621151F5D3296E9215DD47CBC0 /* MyLayoutPos.h in Headers */ = {isa = PBXBuildFile; fileRef = 61468C59FC852E3E437604AA58AEC782 /* MyLayoutPos.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F07F009588357D1DB11F6887BADF7F6E /* MyRelativeLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEA1BE670CCC513169C126B5A68E1BC /* MyRelativeLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F100807834B889E75916619921B6BC9C /* MyLayoutSizeInner.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A7903DC552B0E2D38914D505110772 /* MyLayoutSizeInner.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F4306FC3D3A7390AC58D1DEED40B501D /* MyFloatLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7907670B8FC850790252DD7ACD3DFFB2 /* MyFloatLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F5B43D7C5F474F7CE24F86D6EE9B225F /* MyLayoutSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D06C9A80D0311C2594E30EEBE1EEAC10 /* MyLayoutSize.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FE600E51722E2AFF40F7F9F9BEACEA59 /* MyPathLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A1FAEE7A1277BD8EC8062EC4AC7BD /* MyPathLayout.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D2DDA2EFD72E3A88A7D07780909D21E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1BD4FB30BFDA563F14792B97E4A10ED;
+			remoteInfo = MyLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034F03DB16F03AC8082C537140048583 /* MyMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyMaker.h; path = MyLayout/Lib/MyMaker.h; sourceTree = "<group>"; };
+		06C94E5EDD045054CF3FB2419670E778 /* Pods-SKbase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SKbase.debug.xcconfig"; sourceTree = "<group>"; };
+		0C846200FB67A5127F35A71B18CA6ECA /* MyLayoutDef.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutDef.h; path = MyLayout/Lib/MyLayoutDef.h; sourceTree = "<group>"; };
+		0CE35F5D175F08F702DB156D8BE47F1E /* MyLinearLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLinearLayout.m; path = MyLayout/Lib/MyLinearLayout.m; sourceTree = "<group>"; };
+		0D28033A456D2FC499AC911B86E63ABB /* MyLayoutSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutSize.h; path = MyLayout/Lib/MyLayoutSize.h; sourceTree = "<group>"; };
+		1D8C89A152D088A4C3CB96DF884EDA31 /* MyFloatLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyFloatLayout.h; path = MyLayout/Lib/MyFloatLayout.h; sourceTree = "<group>"; };
+		1DC9D29490E0142BEA7191ED56895916 /* MyLayoutPosInner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutPosInner.h; path = MyLayout/Lib/MyLayoutPosInner.h; sourceTree = "<group>"; };
+		288E82A5C60842F38D3E3CC54C9C199B /* MyGridNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyGridNode.h; path = MyLayout/Lib/MyGridNode.h; sourceTree = "<group>"; };
+		2B561987059D0DD9D795076614E87720 /* MyDimeScale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyDimeScale.m; path = MyLayout/Lib/MyDimeScale.m; sourceTree = "<group>"; };
+		37A6AD92EA307F634EA96D9631637AF2 /* MyGridLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyGridLayout.m; path = MyLayout/Lib/MyGridLayout.m; sourceTree = "<group>"; };
+		3BFB9EBA23008E21C5292BDE2B5357CF /* libMyLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		41A7903DC552B0E2D38914D505110772 /* MyLayoutSizeInner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutSizeInner.h; path = MyLayout/Lib/MyLayoutSizeInner.h; sourceTree = "<group>"; };
+		453EE88BAE6631E462ECDEF6B4027A44 /* MyLayoutMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutMath.h; path = MyLayout/Lib/MyLayoutMath.h; sourceTree = "<group>"; };
+		4FEA1BE670CCC513169C126B5A68E1BC /* MyRelativeLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyRelativeLayout.h; path = MyLayout/Lib/MyRelativeLayout.h; sourceTree = "<group>"; };
+		5504F1BAAA207B8A61110D5E72BD0F01 /* MyFrameLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyFrameLayout.h; path = MyLayout/Lib/MyFrameLayout.h; sourceTree = "<group>"; };
+		599A8E216BEC9B7009223E921C8E8B35 /* MyBorderline.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyBorderline.m; path = MyLayout/Lib/MyBorderline.m; sourceTree = "<group>"; };
+		5E6A1FAEE7A1277BD8EC8062EC4AC7BD /* MyPathLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyPathLayout.m; path = MyLayout/Lib/MyPathLayout.m; sourceTree = "<group>"; };
+		61468C59FC852E3E437604AA58AEC782 /* MyLayoutPos.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutPos.h; path = MyLayout/Lib/MyLayoutPos.h; sourceTree = "<group>"; };
+		62959E0E6C20D544E3DF84E762EEFC82 /* MyLayoutMath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLayoutMath.m; path = MyLayout/Lib/MyLayoutMath.m; sourceTree = "<group>"; };
+		66214C0FE9F771C44D9256F62B810432 /* MyLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MyLayout-dummy.m"; sourceTree = "<group>"; };
+		67E88FB169809545AA9867DFFEE629BA /* MyBorderline.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyBorderline.h; path = MyLayout/Lib/MyBorderline.h; sourceTree = "<group>"; };
+		72018D9633A47B610FA22DA41515E103 /* MyFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyFlowLayout.h; path = MyLayout/Lib/MyFlowLayout.h; sourceTree = "<group>"; };
+		785F7418F623FBA96CA241ACD6D5869B /* MyTableLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyTableLayout.h; path = MyLayout/Lib/MyTableLayout.h; sourceTree = "<group>"; };
+		7907670B8FC850790252DD7ACD3DFFB2 /* MyFloatLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyFloatLayout.m; path = MyLayout/Lib/MyFloatLayout.m; sourceTree = "<group>"; };
+		7BAAE18B4CD4CC8EC440E914F8CB3249 /* libPods-SKbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKbase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D87A7E8366F1B8538549162CF0C0B60 /* Pods-SKbase-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SKbase-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7DAE22C4F78076700B10FCE55E05FD69 /* MyDimeScale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyDimeScale.h; path = MyLayout/Lib/MyDimeScale.h; sourceTree = "<group>"; };
+		7F9AAFD68BBB440F63368A15CB21FB68 /* MyMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyMaker.m; path = MyLayout/Lib/MyMaker.m; sourceTree = "<group>"; };
+		84C72FA913CA09DBD465FCF4AEDD96A2 /* MyLayoutInner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutInner.h; path = MyLayout/Lib/MyLayoutInner.h; sourceTree = "<group>"; };
+		89961E4244FAEB09454564C76C4431BF /* MyGridLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyGridLayout.h; path = MyLayout/Lib/MyGridLayout.h; sourceTree = "<group>"; };
+		89DF8B0458C14E58F84F9C47C08A9D00 /* MyLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MyLayout.xcconfig; sourceTree = "<group>"; };
+		9133181CED9380515C769D713C08D8AF /* MyFrameLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyFrameLayout.m; path = MyLayout/Lib/MyFrameLayout.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94F0B16647C709CE94A7AB2AF395FE96 /* MyLinearLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLinearLayout.h; path = MyLayout/Lib/MyLinearLayout.h; sourceTree = "<group>"; };
+		9B5964890E2F08F9813F3D98CA29C336 /* MyGridNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyGridNode.m; path = MyLayout/Lib/MyGridNode.m; sourceTree = "<group>"; };
+		9D1914CCBE707307FDD34D8F68FBDE69 /* MyLayoutDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutDelegate.h; path = MyLayout/Lib/MyLayoutDelegate.h; sourceTree = "<group>"; };
+		9FE09A9965540C6B4B97971696066E47 /* Pods-SKbase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SKbase-dummy.m"; sourceTree = "<group>"; };
+		AC8A56E8CCB0FA2274191CB8E8636BC1 /* MyBaseLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyBaseLayout.h; path = MyLayout/Lib/MyBaseLayout.h; sourceTree = "<group>"; };
+		AD873436B334918B82710FCE06ABED4F /* MyPathLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyPathLayout.h; path = MyLayout/Lib/MyPathLayout.h; sourceTree = "<group>"; };
+		B441D308B455E69DFF98A4815D9A5F12 /* MyLayoutSizeClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayoutSizeClass.h; path = MyLayout/Lib/MyLayoutSizeClass.h; sourceTree = "<group>"; };
+		BA4B5C92BEF17E9AFCBCA80C13311F1E /* MyTableLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyTableLayout.m; path = MyLayout/Lib/MyTableLayout.m; sourceTree = "<group>"; };
+		BD4D88E1B25D098ACFFB64156FFA4BB6 /* MyLayoutSizeClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLayoutSizeClass.m; path = MyLayout/Lib/MyLayoutSizeClass.m; sourceTree = "<group>"; };
+		C2D0CEB8BEA05BFAB2089D37613E4B91 /* MyFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyFlowLayout.m; path = MyLayout/Lib/MyFlowLayout.m; sourceTree = "<group>"; };
+		CBF4A0509FA60C13E170D6940C503060 /* Pods-SKbase-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SKbase-resources.sh"; sourceTree = "<group>"; };
+		D06C9A80D0311C2594E30EEBE1EEAC10 /* MyLayoutSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLayoutSize.m; path = MyLayout/Lib/MyLayoutSize.m; sourceTree = "<group>"; };
+		D983032A7F0C574C4871B30CD5B6404A /* MyLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyLayout.h; path = MyLayout/Lib/MyLayout.h; sourceTree = "<group>"; };
+		DA22717EED5D2A350736E4498F971A64 /* MyRelativeLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyRelativeLayout.m; path = MyLayout/Lib/MyRelativeLayout.m; sourceTree = "<group>"; };
+		DE107A527EFD97CF5A2B35954B311F94 /* MyBaseLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyBaseLayout.m; path = MyLayout/Lib/MyBaseLayout.m; sourceTree = "<group>"; };
+		E1FD94F17EC69C8DBA22401F83D8BCD3 /* MyGrid.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MyGrid.h; path = MyLayout/Lib/MyGrid.h; sourceTree = "<group>"; };
+		E61D5952CC509719283DA16F5881887F /* MyLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MyLayout-prefix.pch"; sourceTree = "<group>"; };
+		EA92FAB6555A5269068CF7BD49BC924D /* MyLayoutDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLayoutDelegate.m; path = MyLayout/Lib/MyLayoutDelegate.m; sourceTree = "<group>"; };
+		EC9171102FDE023273A136ED0FC73F85 /* Pods-SKbase-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SKbase-frameworks.sh"; sourceTree = "<group>"; };
+		EE2FCF1006F543EB42E27FFB30B9AE01 /* Pods-SKbase-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SKbase-acknowledgements.plist"; sourceTree = "<group>"; };
+		EF57B9FE2CF6F36B8BC6C890A8593879 /* Pods-SKbase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SKbase.release.xcconfig"; sourceTree = "<group>"; };
+		F0118FC26614020BD4C6015321BBF1A0 /* MyLayoutPos.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyLayoutPos.m; path = MyLayout/Lib/MyLayoutPos.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A7CD1F1E309285BD322F67877338AE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E4EBB11F6671EEB2D61079E1A5ADB51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		336DAF891DD35892D73771B191E3AAB9 /* MyLayout */ = {
+			isa = PBXGroup;
+			children = (
+				AC8A56E8CCB0FA2274191CB8E8636BC1 /* MyBaseLayout.h */,
+				DE107A527EFD97CF5A2B35954B311F94 /* MyBaseLayout.m */,
+				67E88FB169809545AA9867DFFEE629BA /* MyBorderline.h */,
+				599A8E216BEC9B7009223E921C8E8B35 /* MyBorderline.m */,
+				7DAE22C4F78076700B10FCE55E05FD69 /* MyDimeScale.h */,
+				2B561987059D0DD9D795076614E87720 /* MyDimeScale.m */,
+				1D8C89A152D088A4C3CB96DF884EDA31 /* MyFloatLayout.h */,
+				7907670B8FC850790252DD7ACD3DFFB2 /* MyFloatLayout.m */,
+				72018D9633A47B610FA22DA41515E103 /* MyFlowLayout.h */,
+				C2D0CEB8BEA05BFAB2089D37613E4B91 /* MyFlowLayout.m */,
+				5504F1BAAA207B8A61110D5E72BD0F01 /* MyFrameLayout.h */,
+				9133181CED9380515C769D713C08D8AF /* MyFrameLayout.m */,
+				E1FD94F17EC69C8DBA22401F83D8BCD3 /* MyGrid.h */,
+				89961E4244FAEB09454564C76C4431BF /* MyGridLayout.h */,
+				37A6AD92EA307F634EA96D9631637AF2 /* MyGridLayout.m */,
+				288E82A5C60842F38D3E3CC54C9C199B /* MyGridNode.h */,
+				9B5964890E2F08F9813F3D98CA29C336 /* MyGridNode.m */,
+				D983032A7F0C574C4871B30CD5B6404A /* MyLayout.h */,
+				0C846200FB67A5127F35A71B18CA6ECA /* MyLayoutDef.h */,
+				9D1914CCBE707307FDD34D8F68FBDE69 /* MyLayoutDelegate.h */,
+				EA92FAB6555A5269068CF7BD49BC924D /* MyLayoutDelegate.m */,
+				84C72FA913CA09DBD465FCF4AEDD96A2 /* MyLayoutInner.h */,
+				453EE88BAE6631E462ECDEF6B4027A44 /* MyLayoutMath.h */,
+				62959E0E6C20D544E3DF84E762EEFC82 /* MyLayoutMath.m */,
+				61468C59FC852E3E437604AA58AEC782 /* MyLayoutPos.h */,
+				F0118FC26614020BD4C6015321BBF1A0 /* MyLayoutPos.m */,
+				1DC9D29490E0142BEA7191ED56895916 /* MyLayoutPosInner.h */,
+				0D28033A456D2FC499AC911B86E63ABB /* MyLayoutSize.h */,
+				D06C9A80D0311C2594E30EEBE1EEAC10 /* MyLayoutSize.m */,
+				B441D308B455E69DFF98A4815D9A5F12 /* MyLayoutSizeClass.h */,
+				BD4D88E1B25D098ACFFB64156FFA4BB6 /* MyLayoutSizeClass.m */,
+				41A7903DC552B0E2D38914D505110772 /* MyLayoutSizeInner.h */,
+				94F0B16647C709CE94A7AB2AF395FE96 /* MyLinearLayout.h */,
+				0CE35F5D175F08F702DB156D8BE47F1E /* MyLinearLayout.m */,
+				034F03DB16F03AC8082C537140048583 /* MyMaker.h */,
+				7F9AAFD68BBB440F63368A15CB21FB68 /* MyMaker.m */,
+				AD873436B334918B82710FCE06ABED4F /* MyPathLayout.h */,
+				5E6A1FAEE7A1277BD8EC8062EC4AC7BD /* MyPathLayout.m */,
+				4FEA1BE670CCC513169C126B5A68E1BC /* MyRelativeLayout.h */,
+				DA22717EED5D2A350736E4498F971A64 /* MyRelativeLayout.m */,
+				785F7418F623FBA96CA241ACD6D5869B /* MyTableLayout.h */,
+				BA4B5C92BEF17E9AFCBCA80C13311F1E /* MyTableLayout.m */,
+				6909EED11FD7B9E272F9ACE3E1B1E833 /* Support Files */,
+			);
+			path = MyLayout;
+			sourceTree = "<group>";
+		};
+		39088BE2C4E023AC3BA279C51768B486 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				336DAF891DD35892D73771B191E3AAB9 /* MyLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6909EED11FD7B9E272F9ACE3E1B1E833 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89DF8B0458C14E58F84F9C47C08A9D00 /* MyLayout.xcconfig */,
+				66214C0FE9F771C44D9256F62B810432 /* MyLayout-dummy.m */,
+				E61D5952CC509719283DA16F5881887F /* MyLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MyLayout";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				39088BE2C4E023AC3BA279C51768B486 /* Pods */,
+				ECF01BF2AFA83E90500F3B7F24CE03B6 /* Products */,
+				F81FEAA9DA1F10D1346E6657F3A549FE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		86B223FAEBFB58E3CD1B4FA1DD7F2D86 /* Pods-SKbase */ = {
+			isa = PBXGroup;
+			children = (
+				7D87A7E8366F1B8538549162CF0C0B60 /* Pods-SKbase-acknowledgements.markdown */,
+				EE2FCF1006F543EB42E27FFB30B9AE01 /* Pods-SKbase-acknowledgements.plist */,
+				9FE09A9965540C6B4B97971696066E47 /* Pods-SKbase-dummy.m */,
+				EC9171102FDE023273A136ED0FC73F85 /* Pods-SKbase-frameworks.sh */,
+				CBF4A0509FA60C13E170D6940C503060 /* Pods-SKbase-resources.sh */,
+				06C94E5EDD045054CF3FB2419670E778 /* Pods-SKbase.debug.xcconfig */,
+				EF57B9FE2CF6F36B8BC6C890A8593879 /* Pods-SKbase.release.xcconfig */,
+			);
+			name = "Pods-SKbase";
+			path = "Target Support Files/Pods-SKbase";
+			sourceTree = "<group>";
+		};
+		ECF01BF2AFA83E90500F3B7F24CE03B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BFB9EBA23008E21C5292BDE2B5357CF /* libMyLayout.a */,
+				7BAAE18B4CD4CC8EC440E914F8CB3249 /* libPods-SKbase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F81FEAA9DA1F10D1346E6657F3A549FE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				86B223FAEBFB58E3CD1B4FA1DD7F2D86 /* Pods-SKbase */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64E4F1D8C662F9BE9A40AC762EE5C0CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB42CDA8703E27D37E5ACB09A0D3740 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E13BB3ECA8216E82E0553AC360208DD /* MyBaseLayout.h in Headers */,
+				865CF7CA62F6753D2FC3B0001DD3909D /* MyBorderline.h in Headers */,
+				8B9E35BA167B07474D28D732C3CC898B /* MyDimeScale.h in Headers */,
+				308F81194BB4BB4FCF9AD59E7D3D4A5A /* MyFloatLayout.h in Headers */,
+				8E451D050938B95444FF60AA0DFD67FA /* MyFlowLayout.h in Headers */,
+				D81669EF0BE77B8C82B05D6CBE10E4D4 /* MyFrameLayout.h in Headers */,
+				1C28432EC714AD05F13331715AC63078 /* MyGrid.h in Headers */,
+				2D5F9BCE745333FC5FB3A8F2FC4DE615 /* MyGridLayout.h in Headers */,
+				8022CE5D1F5A09EE9D5C05896F38A03E /* MyGridNode.h in Headers */,
+				A84BA86CF1CDDD6142005C1C9161CD75 /* MyLayout.h in Headers */,
+				60AE71386E2841521E8CD89467C534D3 /* MyLayoutDef.h in Headers */,
+				756A74377FC303B5DBE6B56A0EAF0051 /* MyLayoutDelegate.h in Headers */,
+				07756E3E494A2A6CAA5B31F0BF77F51B /* MyLayoutInner.h in Headers */,
+				7FE0A53C888E9DF8985E5DE0CDDC4275 /* MyLayoutMath.h in Headers */,
+				EEDB16621151F5D3296E9215DD47CBC0 /* MyLayoutPos.h in Headers */,
+				D4D103131FB4975840DE86D0AC4693D9 /* MyLayoutPosInner.h in Headers */,
+				9EDB80514C29514FE9DBE758A8F3A62A /* MyLayoutSize.h in Headers */,
+				3DEF4A5259B51F891212F5D5AEAD3B42 /* MyLayoutSizeClass.h in Headers */,
+				F100807834B889E75916619921B6BC9C /* MyLayoutSizeInner.h in Headers */,
+				0CF9AA374468BC5370398CBD0B3260C6 /* MyLinearLayout.h in Headers */,
+				D49DB0FBF78E69791D04985A0B7D412E /* MyMaker.h in Headers */,
+				0AEE3FE15B35F1DFEBFBC9D7FA7BB963 /* MyPathLayout.h in Headers */,
+				F07F009588357D1DB11F6887BADF7F6E /* MyRelativeLayout.h in Headers */,
+				2889507A0F27C615B61A4402C2157125 /* MyTableLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		28AA2D893654BA507E90289427EF5443 /* Pods-SKbase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FDAF3DEA6ADE7E4FE6E5311C3FAC72F /* Build configuration list for PBXNativeTarget "Pods-SKbase" */;
+			buildPhases = (
+				64E4F1D8C662F9BE9A40AC762EE5C0CE /* Headers */,
+				D6E36ADF381CEAAB19BB2627A064B9D8 /* Sources */,
+				9E4EBB11F6671EEB2D61079E1A5ADB51 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3E315C0C06B8C9328FFA02CBBB29F15 /* PBXTargetDependency */,
+			);
+			name = "Pods-SKbase";
+			productName = "Pods-SKbase";
+			productReference = 7BAAE18B4CD4CC8EC440E914F8CB3249 /* libPods-SKbase.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E1BD4FB30BFDA563F14792B97E4A10ED /* MyLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CDBB4129DC42F91D228B5CD80F9F280 /* Build configuration list for PBXNativeTarget "MyLayout" */;
+			buildPhases = (
+				CEB42CDA8703E27D37E5ACB09A0D3740 /* Headers */,
+				E90C3C784FE8F222DD9779832904582E /* Sources */,
+				9A7CD1F1E309285BD322F67877338AE1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyLayout;
+			productName = MyLayout;
+			productReference = 3BFB9EBA23008E21C5292BDE2B5357CF /* libMyLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ECF01BF2AFA83E90500F3B7F24CE03B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1BD4FB30BFDA563F14792B97E4A10ED /* MyLayout */,
+				28AA2D893654BA507E90289427EF5443 /* Pods-SKbase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D6E36ADF381CEAAB19BB2627A064B9D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50AFF45BB148913753C8A14F84224948 /* Pods-SKbase-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E90C3C784FE8F222DD9779832904582E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02D540DCD36104B25D8DECF562378240 /* MyBaseLayout.m in Sources */,
+				3BC2B37A0AF757DC196FE38CD97A4993 /* MyBorderline.m in Sources */,
+				AAD258719E5F913B2B0319A352C4144A /* MyDimeScale.m in Sources */,
+				F4306FC3D3A7390AC58D1DEED40B501D /* MyFloatLayout.m in Sources */,
+				08B87FA2BFF9864270D89553A58B7D85 /* MyFlowLayout.m in Sources */,
+				1BAD1AB331F60A34FB4C5A5D794AB8F0 /* MyFrameLayout.m in Sources */,
+				50C903945950800FF9109093AA55F433 /* MyGridLayout.m in Sources */,
+				91961FB0C48889395A79563539482BD9 /* MyGridNode.m in Sources */,
+				C91578DE2608D3F6B4DDC4E5317E8E35 /* MyLayout-dummy.m in Sources */,
+				ABDA17711F59E20871FD7EE73E1AD8F4 /* MyLayoutDelegate.m in Sources */,
+				11166CC435F579CC901325F9809A947B /* MyLayoutMath.m in Sources */,
+				B954D9FAA20EF8D5AD8F6CB0EB5E773A /* MyLayoutPos.m in Sources */,
+				F5B43D7C5F474F7CE24F86D6EE9B225F /* MyLayoutSize.m in Sources */,
+				12AEAF637B2D5A487FA1E9DFF2B26832 /* MyLayoutSizeClass.m in Sources */,
+				EDB5C531F3EBD5DCD8F29F8DDC96A6B3 /* MyLinearLayout.m in Sources */,
+				BD7FD66819C9714687EF57B231D98320 /* MyMaker.m in Sources */,
+				FE600E51722E2AFF40F7F9F9BEACEA59 /* MyPathLayout.m in Sources */,
+				552D62AF6A83BE3E57F620585CAE9C46 /* MyRelativeLayout.m in Sources */,
+				2047E06F9E0B6B37F8B5DE7C9CF6CF0C /* MyTableLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3E315C0C06B8C9328FFA02CBBB29F15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MyLayout;
+			target = E1BD4FB30BFDA563F14792B97E4A10ED /* MyLayout */;
+			targetProxy = 3D2DDA2EFD72E3A88A7D07780909D21E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		19961F741E4067BC72B913C0D18D9212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89DF8B0458C14E58F84F9C47C08A9D00 /* MyLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MyLayout/MyLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MyLayout;
+				PRODUCT_NAME = MyLayout;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EC88541BB52551930700C012B3D94EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89DF8B0458C14E58F84F9C47C08A9D00 /* MyLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MyLayout/MyLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MyLayout;
+				PRODUCT_NAME = MyLayout;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		613445C26E3B20A275E4BAE7B3A5FBB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF57B9FE2CF6F36B8BC6C890A8593879 /* Pods-SKbase.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C127CB9CD3B471CCBD14C0040B706AE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C94E5EDD045054CF3FB2419670E778 /* Pods-SKbase.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
+				C4EAA84F44D044E108500A81C635F21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FDAF3DEA6ADE7E4FE6E5311C3FAC72F /* Build configuration list for PBXNativeTarget "Pods-SKbase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C127CB9CD3B471CCBD14C0040B706AE7 /* Debug */,
+				613445C26E3B20A275E4BAE7B3A5FBB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CDBB4129DC42F91D228B5CD80F9F280 /* Build configuration list for PBXNativeTarget "MyLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EC88541BB52551930700C012B3D94EF /* Debug */,
+				19961F741E4067BC72B913C0D18D9212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
