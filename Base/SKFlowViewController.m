@@ -6,6 +6,7 @@
 
 @property (nonatomic, strong) UIView *flow_nav_bar;
 @property (nonatomic, strong) UITableView *flow_TableView;
+@property (nonatomic, strong) UIView *flow_bottom_bar;
 @property (nonatomic, strong) UIView *flow_foot_bar;
 @property (nonatomic, assign) double flow_foot_bar_height;
 
@@ -38,13 +39,18 @@
         [self.view addSubview:self.flow_nav_bar];
     }
     [self.view addSubview:self.flow_TableView];
+    if (self.flow_bottom_bar) {
+        [self.view addSubview:self.flow_bottom_bar];
+    }
     [self flowReload];
 }
 
 //刷新flow_TableView
 - (void)flowReload {
     //frame
-    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.flow_nav_bar), SCREEN_WIDTH, self.flow_TableView_frame.size.height - VIEW_HEIGHT(self.flow_nav_bar));
+    _flow_nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.flow_nav_bar));
+    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.flow_nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_nav_bar) - VIEW_HEIGHT(self.flow_bottom_bar));
+    _flow_bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.flow_bottom_bar));
     //foot_bar
     if (VIEW_HEIGHT(self.flow_foot_bar) > 0) {
         _flow_TableView.tableFooterView = self.flow_foot_bar;
@@ -161,6 +167,15 @@
 }
 
 - (UIView *)return_flow_nav_bar {
+    return [UIView new];
+}
+
+//获取flow_bottom_bar
+- (UIView *)flow_bottom_bar {
+    return self.return_flow_bottom_bar;
+}
+
+- (UIView *)return_flow_bottom_bar {
     return [UIView new];
 }
 

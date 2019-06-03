@@ -15,6 +15,9 @@ typedef void(^Click_method_callback)(NSInteger index);
 //获取flow_nav_bar
 - (UIView *)return_flow_nav_bar;
 
+//获取flow_bottom_bar
+- (UIView *)return_flow_bottom_bar;
+
 //获取flow_TableView_frame
 - (CGRect)return_flow_TableView_frame;
 
@@ -106,3 +109,8 @@ NS_ASSUME_NONNULL_END
 #define COLOR_A(HEX, ALPHA) [UIColor colorWithRGBHexString:HEX alpha:ALPHA]
 #define COLOR(HEX) COLOR_A(HEX, 1.0)
 #define COLOR_RANDOM [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0f]
+
+//加载xib
+#define VIEW_BY_XIB(xibName) [[[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil] lastObject]
+#define VIEW_SET_FRAME(view, x, y, w, h) view.frame = CGRectMake(x, y, w, h)
+#define VIEW_BY_FRAME(x, y, w, h) [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)]

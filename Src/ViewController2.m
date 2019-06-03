@@ -1,10 +1,3 @@
-//
-//  ViewController2.m
-//  SKbase
-//
-//  Created by 李书康 on 2019/6/3.
-//  Copyright © 2019 com.SKbase.www. All rights reserved.
-//
 
 #import "ViewController2.h"
 
@@ -25,14 +18,11 @@
     return nav;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIView *)return_flow_bottom_bar {
+    UIView *view = VIEW_BY_FRAME(0, SCREEN_HEIGHT - BOTTOM_BAR_HEIGHT - 44, SCREEN_WIDTH, BOTTOM_BAR_HEIGHT + 44);
+    view.backgroundColor = UIColor.brownColor;
+    return view;
 }
-*/
+
 
 @end

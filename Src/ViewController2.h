@@ -1,10 +1,3 @@
-//
-//  ViewController2.h
-//  SKbase
-//
-//  Created by 李书康 on 2019/6/3.
-//  Copyright © 2019 com.SKbase.www. All rights reserved.
-//
 
 #import "SKFlowViewController.h"
 
