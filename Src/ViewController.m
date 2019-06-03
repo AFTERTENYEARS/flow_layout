@@ -26,7 +26,7 @@
     return nav;
 }
 
-- (double)return_flow_foot_bar_height {
+- (double)return_flow_foot_safe_height {
     return BOTTOM_BAR_HEIGHT;
 }
 

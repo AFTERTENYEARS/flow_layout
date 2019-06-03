@@ -7,8 +7,7 @@
 @property (nonatomic, strong) UIView *flow_nav_bar;
 @property (nonatomic, strong) UITableView *flow_TableView;
 @property (nonatomic, strong) UIView *flow_bottom_bar;
-@property (nonatomic, strong) UIView *flow_foot_bar;
-@property (nonatomic, assign) double flow_foot_bar_height;
+@property (nonatomic, assign) double flow_foot_safe_height;
 
 @property (nonatomic, assign) CGRect flow_TableView_frame;
 @property (nonatomic, assign) BOOL cell_click_effect;
@@ -51,11 +50,9 @@
     _flow_nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.flow_nav_bar));
     _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.flow_nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_nav_bar) - VIEW_HEIGHT(self.flow_bottom_bar));
     _flow_bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.flow_bottom_bar));
-    //foot_bar
-    if (VIEW_HEIGHT(self.flow_foot_bar) > 0) {
-        _flow_TableView.tableFooterView = self.flow_foot_bar;
-    } else if (self.flow_foot_bar_height > 0) {
-        _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.flow_foot_bar_height)];
+    
+    if (self.flow_foot_safe_height > 0) {
+       _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.flow_foot_safe_height)];
     } else {
         _flow_TableView.tableFooterView = [UIView new];
     }
@@ -179,21 +176,12 @@
     return [UIView new];
 }
 
-//获取flow_foot_bar
-- (UIView *)flow_foot_bar {
-    return self.return_flow_foot_bar;
+//获取flow_foot_safe_height
+- (double)flow_foot_safe_height {
+    return self.return_flow_foot_safe_height;
 }
 
-- (UIView *)return_flow_foot_bar {
-    return [UIView new];
-}
-
-//获取flow_foot_bar_height
-- (double)flow_foot_bar_height {
-    return self.return_flow_foot_bar_height;
-}
-
-- (double)return_flow_foot_bar_height {
+- (double)return_flow_foot_safe_height {
     return 0;
 }
 

@@ -33,11 +33,8 @@ typedef void(^Click_method_callback)(NSInteger index);
 //获取flow_cellHeightArray
 - (NSArray<NSNumber *> *)return_flow_cellHeight_array;
 
-//获取flow_foot_bar
-- (UIView *)return_flow_foot_bar;
-
-//获取flow_foot_bar_height
-- (double)return_flow_foot_bar_height;
+//获取flow_foot_safe_height
+- (double)return_flow_foot_safe_height;
 
 //是否可滑动
 - (BOOL)return_flow_scroll_enabled;
