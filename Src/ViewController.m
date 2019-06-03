@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ViewController2.h"
 
 @interface ViewController ()
 
@@ -39,7 +40,10 @@
 
 - (Click_method_callback)return_click_method {
     return ^(NSInteger index) {
-        [self toast:[NSString stringWithFormat:@"%ld", (long)index]];
+        //[self toast:[NSString stringWithFormat:@"%ld", (long)index]];
+        UIViewController *vc = [[ViewController2 alloc] init];
+        vc.title = [NSString stringWithFormat:@"%ld", (long)index];
+        [self.navigationController pushViewController:vc animated:YES];
     };
 }
 

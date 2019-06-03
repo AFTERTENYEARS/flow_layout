@@ -24,12 +24,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -60,7 +60,7 @@
     _flow_TableView.scrollEnabled = self.flow_scroll_enabled;
     //views
     _flow_view_array = self.flow_view_array;
-    //高度数组默认自动获取
+    //cell高度数组默认自动获取
     _flow_cellHeight_array = self.flow_cellHeight_array;
     
     [self.flow_TableView reloadData];
