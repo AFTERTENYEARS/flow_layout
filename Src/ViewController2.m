@@ -13,9 +13,7 @@
 }
 
 - (UIView *)return_flow_nav_bar {
-    SKNavigationBar *nav = [[SKNavigationBar alloc] init];
-    nav.title = [NSString stringWithFormat:@"第 %@ 行", self.title];
-    return nav;
+    return [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
 }
 
 - (UIView *)return_flow_bottom_bar {

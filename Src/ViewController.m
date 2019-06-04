@@ -40,7 +40,6 @@
 
 - (Click_method_callback)return_click_method {
     return ^(NSInteger index) {
-        //[self toast:[NSString stringWithFormat:@"%ld", (long)index]];
         UIViewController *vc = [[ViewController2 alloc] init];
         vc.title = [NSString stringWithFormat:@"%ld", (long)index];
         [self.navigationController pushViewController:vc animated:YES];
@@ -49,7 +48,7 @@
 
 - (NSArray<UIView *> *)views{
     NSMutableArray *views = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 30; i++) {
+    for (NSInteger i = 0; i < 100; i++) {
         if (i % 3 == 0) {
             UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
             v1.backgroundColor = UIColor.grayColor;

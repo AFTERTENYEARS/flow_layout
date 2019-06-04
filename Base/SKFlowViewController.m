@@ -12,6 +12,7 @@
 @property (nonatomic, assign) CGRect flow_TableView_frame;
 @property (nonatomic, assign) BOOL cell_click_effect;
 @property (nonatomic, assign) BOOL flow_scroll_enabled;
+@property (nonatomic, assign) BOOL canBackFromGesture;
 
 @property (nonatomic, copy) Click_method_callback click_method;
 
@@ -25,11 +26,21 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    
+    // 是否禁用返回手势
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = self.canBackFromGesture ? YES : NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    
+    // 开启返回手势
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
 
 - (void)viewDidLoad {
@@ -50,7 +61,7 @@
     _flow_nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.flow_nav_bar));
     _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.flow_nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_nav_bar) - VIEW_HEIGHT(self.flow_bottom_bar));
     _flow_bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.flow_bottom_bar));
-    
+    //foot_safe_height
     if (self.flow_foot_safe_height > 0) {
        _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.flow_foot_safe_height)];
     } else {
@@ -93,8 +104,10 @@
             cell.selected = NO;
         });
     }
-    if (self.click_method) {
-        self.click_method(indexPath.row);
+    if (tableView == self.flow_TableView) {
+        if (self.click_method) {
+            self.click_method(indexPath.row);
+        }
     }
 }
 
@@ -185,6 +198,15 @@
     return 0;
 }
 
+//获取canBackFromGesture
+- (BOOL)canBackFromGesture {
+    return self.return_canBackFromGesture;
+}
+
+- (BOOL)return_canBackFromGesture {
+    return YES;
+}
+
 //获取flow_TableView
 - (UITableView *)flow_TableView {
     if (_flow_TableView) {
@@ -242,6 +264,7 @@
 
 @interface SKNavigationBar ()
 
+@property (nonatomic, strong) UIImageView *backImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @end
@@ -252,9 +275,52 @@
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, STATUS_NAV_BAR_HEIGHT);
+        [self addSubview:self.backImageView];
         [self addSubview:self.titleLabel];
     }
     return self;
+}
+
++ (SKNavigationBar *)backStyleWithTitle:(NSString *)title {
+    SKNavigationBar *backNav = [[SKNavigationBar alloc] init];
+    backNav.title = title;
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [backButton setImage:[UIImage new] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(0, STATUS_BAR_HEIGHT, 44 + 8, 44);
+    
+    UILabel *backText = [[UILabel alloc] initWithFrame:CGRectMake(8 + 10, 10, 24, 24)];
+    backText.textAlignment = NSTextAlignmentCenter;
+    backText.textColor = UIColor.blackColor;
+    backText.font = [UIFont systemFontOfSize:22];
+    backText.adjustsFontSizeToFitWidth = YES;
+    backText.text = @"←";
+    [backButton addSubview:backText];
+    
+    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [backNav addSubview:backButton];
+    return backNav;
+}
+
++ (void)back {
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    [currentVC.navigationController popViewControllerAnimated:YES];
+}
+
++ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC {
+    UIViewController *currentVC;
+    if ([rootVC presentedViewController]) {
+        rootVC = [rootVC presentedViewController];
+    }
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+    } else {
+        currentVC = rootVC;
+    }
+    return currentVC;
 }
 
 - (void)setTitle:(NSString *)title {
@@ -270,6 +336,23 @@
 - (void)setFont:(NSInteger)fontSize {
     _fontSize = fontSize;
     self.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+}
+
+- (void)setImageUrl:(NSString *)imageUrl {
+    _imageUrl = imageUrl;
+    if (imageUrl.length > 0) {
+        self.backImageView.image = [UIImage imageNamed:imageUrl];
+    }
+}
+
+- (UIImageView *)backImageView {
+    if (_backImageView) {
+        return _backImageView;
+    }
+    _backImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, STATUS_NAV_BAR_HEIGHT)];
+    _backImageView.backgroundColor = UIColor.clearColor;
+    _backImageView.contentMode = UIViewContentModeScaleAspectFill;
+    return _backImageView;
 }
 
 - (UILabel *)titleLabel {

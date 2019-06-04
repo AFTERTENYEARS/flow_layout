@@ -9,6 +9,7 @@ typedef void(^Click_method_callback)(NSInteger index);
 #pragma mark - SKFlowViewController
 
 @interface SKFlowViewController : UIViewController
+
 //刷新flow_TableView (必须调用此方法)
 - (void)flowReload;
 
@@ -18,26 +19,29 @@ typedef void(^Click_method_callback)(NSInteger index);
 //获取flow_bottom_bar
 - (UIView *)return_flow_bottom_bar;
 
-//获取flow_TableView_frame
+//获取flow_TableView_frame（默认全屏，有nav、bottom、safe_height时会自动调整）
 - (CGRect)return_flow_TableView_frame;
 
-//获取cell_click_effect
+//获取cell_click_effect(cell点击效果默认无点击效果)
 - (BOOL)return_cell_click_effect;
 
-//获取click_method
+//获取click_method(默认为空)
 - (Click_method_callback)return_click_method;
 
-//获取flow_viewArray
+//获取flow_viewArray(默认为空)
 - (NSArray<UIView *> *)return_flow_view_array;
 
-//获取flow_cellHeightArray
+//获取flow_cellHeightArray(默认自动获取)
 - (NSArray<NSNumber *> *)return_flow_cellHeight_array;
 
-//获取flow_foot_safe_height
+//获取flow_foot_safe_height(默认为0)
 - (double)return_flow_foot_safe_height;
 
-//是否可滑动
+//是否可滑动(默认可滑动)
 - (BOOL)return_flow_scroll_enabled;
+
+//禁用返回手势(默认不禁用)
+- (BOOL)return_canBackFromGesture;
 
 //消息提示
 - (void)toast:(NSString *_Nullable)msg;
@@ -58,7 +62,12 @@ typedef void(^Click_method_callback)(NSInteger index);
 //fontSize
 @property (nonatomic, assign) NSInteger fontSize;
 
+//backImage
+@property (nonatomic, copy) NSString *imageUrl;
+
 - (instancetype)init;
+
++ (SKNavigationBar *)backStyleWithTitle:(NSString *)title;
 
 @end
 
