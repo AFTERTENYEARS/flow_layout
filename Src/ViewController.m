@@ -17,16 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
 }
 
-- (UIView *)return_flow_nav_bar {
+- (UIView *)return_nav_bar {
     SKNavigationBar *nav = [SKNavigationBar new];
     nav.title = @"主页";
     return nav;
 }
 
-- (double)return_flow_foot_safe_height {
+- (double)return_foot_safe_height {
     return BOTTOM_BAR_HEIGHT;
 }
 
@@ -39,7 +38,7 @@
 }
 
 - (Click_method_callback)return_click_method {
-    return ^(NSInteger index) {
+    return ^void(NSInteger index) {
         UIViewController *vc = [[ViewController2 alloc] init];
         vc.title = [NSString stringWithFormat:@"%ld", (long)index];
         [self.navigationController pushViewController:vc animated:YES];

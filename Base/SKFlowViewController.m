@@ -4,20 +4,22 @@
 
 @interface SKFlowViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UIView *flow_nav_bar;
+@property (nonatomic, strong) UIView *nav_bar;
 @property (nonatomic, strong) UITableView *flow_TableView;
-@property (nonatomic, strong) UIView *flow_bottom_bar;
-@property (nonatomic, assign) double flow_foot_safe_height;
+@property (nonatomic, strong) UIView *bottom_bar;
+@property (nonatomic, assign) double foot_safe_height;
 
-@property (nonatomic, assign) CGRect flow_TableView_frame;
-@property (nonatomic, assign) BOOL cell_click_effect;
-@property (nonatomic, assign) BOOL flow_scroll_enabled;
-@property (nonatomic, assign) BOOL canBackFromGesture;
 
 @property (nonatomic, copy) Click_method_callback click_method;
-
 @property (nonatomic, copy) NSArray<UIView *> *flow_view_array;
 @property (nonatomic, copy) NSArray<NSNumber *> *flow_cellHeight_array;
+
+@property (nonatomic, assign) CGRect flow_tableView_frame;
+@property (nonatomic, assign) BOOL cell_click_effect;
+@property (nonatomic, assign) BOOL scroll_enabled;
+@property (nonatomic, assign) BOOL can_back_from_gesture;
+@property (nonatomic, strong) UIColor *background_color;
+
 
 @end
 
@@ -29,7 +31,7 @@
     
     // 是否禁用返回手势
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = self.canBackFromGesture ? YES : NO;
+        self.navigationController.interactivePopGestureRecognizer.enabled = self.can_back_from_gesture ? YES : NO;
     }
 }
 
@@ -45,25 +47,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.flow_nav_bar) {
-        [self.view addSubview:self.flow_nav_bar];
+    
+    if (self.nav_bar) {
+        [self.view addSubview:self.nav_bar];
     }
     [self.view addSubview:self.flow_TableView];
-    if (self.flow_bottom_bar) {
-        [self.view addSubview:self.flow_bottom_bar];
+    if (self.bottom_bar) {
+        [self.view addSubview:self.bottom_bar];
     }
+    self.view.backgroundColor = self.background_color;
+    
     [self flowReload];
 }
 
 //刷新flow_TableView
 - (void)flowReload {
     //frame
-    _flow_nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.flow_nav_bar));
-    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.flow_nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_nav_bar) - VIEW_HEIGHT(self.flow_bottom_bar));
-    _flow_bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.flow_bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.flow_bottom_bar));
+    _nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.nav_bar));
+    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.nav_bar) - VIEW_HEIGHT(self.bottom_bar));
+    _bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.bottom_bar));
     //foot_safe_height
-    if (self.flow_foot_safe_height > 0) {
-       _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.flow_foot_safe_height)];
+    if (self.foot_safe_height > 0) {
+       _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.foot_safe_height)];
     } else {
         _flow_TableView.tableFooterView = [UIView new];
     }
@@ -71,7 +76,7 @@
     //cell点击效果（默认为NO）
     _cell_click_effect = self.cell_click_effect;
     //是否可滑动
-    _flow_TableView.scrollEnabled = self.flow_scroll_enabled;
+    _flow_TableView.scrollEnabled = self.scroll_enabled;
     //views
     _flow_view_array = self.flow_view_array;
     //cell高度数组默认自动获取
@@ -98,12 +103,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    for (UITableViewCell *cell in tableView.visibleCells) {
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2/*延迟执行时间*/ * NSEC_PER_SEC));
-        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            cell.selected = NO;
-        });
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == self.flow_TableView) {
         if (self.click_method) {
             self.click_method(indexPath.row);
@@ -111,12 +111,12 @@
     }
 }
 
-//获取flow_TableView_frame
-- (CGRect)flow_TableView_frame {
-    return self.return_flow_TableView_frame;
+//获取flow_tableView_frame
+- (CGRect)flow_tableView_frame {
+    return self.return_flow_tableView_frame;
 }
 
-- (CGRect)return_flow_TableView_frame {
+- (CGRect)return_flow_tableView_frame {
     return CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
@@ -140,7 +140,7 @@
     };
 }
 
-//获取flow_viewArray
+//获取flow_view_array
 - (NSArray<UIView *> *)flow_view_array {
     return self.return_flow_view_array;
 }
@@ -149,7 +149,7 @@
     return @[];
 }
 
-//获取flow_cellHeightArray
+//获取flow_cellHeight_array
 - (NSArray<NSNumber *> *)flow_cellHeight_array {
     return self.return_flow_cellHeight_array;
 }
@@ -163,48 +163,57 @@
 }
 
 //是否可滑动
-- (BOOL)flow_scroll_enabled {
-    return self.return_flow_scroll_enabled;
+- (BOOL)scroll_enabled {
+    return self.return_scroll_enabled;
 }
 
-- (BOOL)return_flow_scroll_enabled {
+- (BOOL)return_scroll_enabled {
     return YES;
 }
 
-//获取flow_nav_bar
-- (UIView *)flow_nav_bar {
-    return self.return_flow_nav_bar;
+//获取nav_bar
+- (UIView *)nav_bar {
+    return self.return_nav_bar;
 }
 
-- (UIView *)return_flow_nav_bar {
+- (UIView *)return_nav_bar {
     return [UIView new];
 }
 
-//获取flow_bottom_bar
-- (UIView *)flow_bottom_bar {
-    return self.return_flow_bottom_bar;
+//获取bottom_bar
+- (UIView *)bottom_bar {
+    return self.return_bottom_bar;
 }
 
-- (UIView *)return_flow_bottom_bar {
+- (UIView *)return_bottom_bar {
     return [UIView new];
 }
 
-//获取flow_foot_safe_height
-- (double)flow_foot_safe_height {
-    return self.return_flow_foot_safe_height;
+//获取foot_safe_height
+- (double)foot_safe_height {
+    return self.return_foot_safe_height;
 }
 
-- (double)return_flow_foot_safe_height {
+- (double)return_foot_safe_height {
     return 0;
 }
 
-//获取canBackFromGesture
-- (BOOL)canBackFromGesture {
-    return self.return_canBackFromGesture;
+//获取can_back_from_gesture
+- (BOOL)can_back_from_gesture {
+    return self.return_back_from_gesture;
 }
 
-- (BOOL)return_canBackFromGesture {
+- (BOOL)return_back_from_gesture {
     return YES;
+}
+
+//background_color
+- (UIColor *)background_color {
+    return self.return_background_color;
+}
+
+- (UIColor *)return_background_color {
+    return UIColor.whiteColor;
 }
 
 //获取flow_TableView
@@ -283,19 +292,16 @@
 
 + (SKNavigationBar *)backStyleWithTitle:(NSString *)title {
     SKNavigationBar *backNav = [[SKNavigationBar alloc] init];
+    backNav.backgroundColor = UIColor.whiteColor;
     backNav.title = title;
     
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setImage:[UIImage new] forState:UIControlStateNormal];
-    backButton.frame = CGRectMake(0, STATUS_BAR_HEIGHT, 44 + 8, 44);
-    
-    UILabel *backText = [[UILabel alloc] initWithFrame:CGRectMake(8 + 10, 10, 24, 24)];
-    backText.textAlignment = NSTextAlignmentCenter;
-    backText.textColor = UIColor.blackColor;
-    backText.font = [UIFont systemFontOfSize:22];
-    backText.adjustsFontSizeToFitWidth = YES;
-    backText.text = @"←";
-    [backButton addSubview:backText];
+    backButton.frame = CGRectMake(0, STATUS_BAR_HEIGHT, 44, 44);
+    [backButton setTitle:@"←" forState:UIControlStateNormal];
+    [backButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [backButton setTitleColor:UIColor.lightGrayColor forState:UIControlStateHighlighted];
+    backButton.titleLabel.font = [UIFont systemFontOfSize:22];
     
     [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [backNav addSubview:backButton];
