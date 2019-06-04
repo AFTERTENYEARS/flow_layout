@@ -182,7 +182,9 @@
 
 //获取bottom_bar
 - (UIView *)bottom_bar {
-    return self.return_bottom_bar;
+    UIView *get_bar = self.return_bottom_bar;
+    get_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(get_bar), SCREEN_WIDTH, VIEW_HEIGHT(get_bar));
+    return get_bar;
 }
 
 - (UIView *)return_bottom_bar {

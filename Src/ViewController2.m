@@ -16,14 +16,14 @@
 }
 
 - (UIView *)return_nav_bar {
-    SKNavigationBar *bar = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
-    bar.imageUrl = @"nav_back";
-    bar.themeColor = UIColor.whiteColor;
-    return bar;
+    SKNavigationBar *nav = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
+    nav.imageUrl = @"nav_back";
+    nav.themeColor = UIColor.whiteColor;
+    return nav;
 }
 
 - (UIView *)return_bottom_bar {
-    UIView *view = VIEW_BY_FRAME(0, SCREEN_HEIGHT - BOTTOM_BAR_HEIGHT - 44, SCREEN_WIDTH, BOTTOM_BAR_HEIGHT + 44);
+    UIView *view = VIEW_BY_FRAME(0, 0, SCREEN_WIDTH, BOTTOM_BAR_HEIGHT + 44);
     view.backgroundColor = UIColor.brownColor;
     return view;
 }
