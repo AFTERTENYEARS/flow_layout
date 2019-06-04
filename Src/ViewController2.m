@@ -16,7 +16,10 @@
 }
 
 - (UIView *)return_nav_bar {
-    return [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
+    SKNavigationBar *bar = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
+    bar.imageUrl = @"nav_back";
+    bar.themeColor = UIColor.whiteColor;
+    return bar;
 }
 
 - (UIView *)return_bottom_bar {

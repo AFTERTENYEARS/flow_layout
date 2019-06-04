@@ -11,8 +11,8 @@
 
 
 @property (nonatomic, copy) Click_method_callback click_method;
-@property (nonatomic, copy) NSArray<UIView *> *flow_view_array;
-@property (nonatomic, copy) NSArray<NSNumber *> *flow_cellHeight_array;
+@property (nonatomic, strong) NSArray<UIView *> *flow_view_array;
+@property (nonatomic, strong) NSArray<NSNumber *> *flow_cellHeight_array;
 
 @property (nonatomic, assign) CGRect flow_tableView_frame;
 @property (nonatomic, assign) BOOL cell_click_effect;
@@ -274,7 +274,10 @@
 @interface SKNavigationBar ()
 
 @property (nonatomic, strong) UIImageView *backImageView;
+@property (nonatomic, strong) UIButton *backItem;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIView *left_items_view;
+@property (nonatomic, strong) UIView *right_items_view;
 
 @end
 
@@ -284,7 +287,12 @@
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, STATUS_NAV_BAR_HEIGHT);
+        self.backgroundColor = UIColor.whiteColor;
+        self.clipsToBounds = YES;
         [self addSubview:self.backImageView];
+        [self addSubview:self.left_items_view];
+        [self addSubview:self.right_items_view];
+        [self addSubview:self.backItem];
         [self addSubview:self.titleLabel];
     }
     return self;
@@ -292,41 +300,9 @@
 
 + (SKNavigationBar *)backStyleWithTitle:(NSString *)title {
     SKNavigationBar *backNav = [[SKNavigationBar alloc] init];
-    backNav.backgroundColor = UIColor.whiteColor;
     backNav.title = title;
-    
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setImage:[UIImage new] forState:UIControlStateNormal];
-    backButton.frame = CGRectMake(0, STATUS_BAR_HEIGHT, 44, 44);
-    [backButton setTitle:@"←" forState:UIControlStateNormal];
-    [backButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
-    [backButton setTitleColor:UIColor.lightGrayColor forState:UIControlStateHighlighted];
-    backButton.titleLabel.font = [UIFont systemFontOfSize:22];
-    
-    [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [backNav addSubview:backButton];
+    backNav.backItem.hidden = NO;
     return backNav;
-}
-
-+ (void)back {
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
-    [currentVC.navigationController popViewControllerAnimated:YES];
-}
-
-+ (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC {
-    UIViewController *currentVC;
-    if ([rootVC presentedViewController]) {
-        rootVC = [rootVC presentedViewController];
-    }
-    if ([rootVC isKindOfClass:[UITabBarController class]]) {
-        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
-    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
-        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
-    } else {
-        currentVC = rootVC;
-    }
-    return currentVC;
 }
 
 - (void)setTitle:(NSString *)title {
@@ -334,9 +310,10 @@
     self.titleLabel.text = title;
 }
 
-- (void)setColor:(UIColor *)titleColor {
-    _titleColor = titleColor;
-    self.titleLabel.textColor = titleColor;
+- (void)setThemeColor:(UIColor *)themeColor {
+    _themeColor = themeColor;
+    self.titleLabel.textColor = themeColor;
+    [self.backItem setTitleColor:themeColor forState:UIControlStateNormal];
 }
 
 - (void)setFont:(NSInteger)fontSize {
@@ -351,6 +328,49 @@
     }
 }
 
+- (void)setLeft_items:(NSArray<UIButton *> *)left_items {
+    _left_items = left_items;
+    for (UIView *subView in self.left_items_view.subviews) {
+        [subView removeFromSuperview];
+    }
+    for (NSInteger i = 0; i < left_items.count; i++) {
+        UIButton *item = left_items[i];
+        CGFloat width = 16;
+        for (NSInteger j = 0; j < i; j++) {
+            UIButton *addWidthItem = left_items[j];
+            width += VIEW_WIDTH(addWidthItem);
+            width += 16;
+        }
+        UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(width, 0, VIEW_WIDTH(item), NAVIGATIONBAR_HEIGHT)];
+        item.frame = CGRectMake(0, (NAVIGATIONBAR_HEIGHT - VIEW_HEIGHT(item)) / 2.0, VIEW_WIDTH(item), VIEW_HEIGHT(item));
+        [buttonContainer addSubview:item];
+        [self.left_items_view addSubview:buttonContainer];
+    }
+}
+
+- (void)setRight_items:(NSArray<UIButton *> *)right_items {
+    NSMutableArray * tmp_items = [NSMutableArray arrayWithArray:right_items];
+    NSArray *reverse_items = [[tmp_items reverseObjectEnumerator] allObjects];
+    _right_items = reverse_items;
+    for (UIView *subView in self.right_items_view.subviews) {
+        [subView removeFromSuperview];
+    }
+    for (NSInteger i = 0; i < reverse_items.count; i++) {
+        UIButton *item = reverse_items[i];
+        CGFloat width = 16;
+        for (NSInteger j = 0; j < i; j++) {
+            UIButton *addWidthItem = reverse_items[j];
+            width += VIEW_WIDTH(addWidthItem);
+            width += 16;
+        }
+        width += VIEW_WIDTH(item);
+        UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(VIEW_WIDTH(self.right_items_view) - width, 0, VIEW_WIDTH(item), NAVIGATIONBAR_HEIGHT)];
+        item.frame = CGRectMake(0, (NAVIGATIONBAR_HEIGHT - VIEW_HEIGHT(item)) / 2.0, VIEW_WIDTH(item), VIEW_HEIGHT(item));
+        [buttonContainer addSubview:item];
+        [self.right_items_view addSubview:buttonContainer];
+    }
+}
+
 - (UIImageView *)backImageView {
     if (_backImageView) {
         return _backImageView;
@@ -359,6 +379,44 @@
     _backImageView.backgroundColor = UIColor.clearColor;
     _backImageView.contentMode = UIViewContentModeScaleAspectFill;
     return _backImageView;
+}
+
+- (UIButton *)backItem {
+    if (_backItem) {
+        return _backItem;
+    }
+    _backItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_backItem setImage:[UIImage new] forState:UIControlStateNormal];
+    _backItem.frame = CGRectMake(0, STATUS_BAR_HEIGHT, 44, 44);
+    [_backItem setTitle:@"←" forState:UIControlStateNormal];
+    [_backItem setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [_backItem setTitleColor:UIColor.lightGrayColor forState:UIControlStateHighlighted];
+    _backItem.titleLabel.font = [UIFont systemFontOfSize:22];
+    [_backItem addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    
+    _backItem.hidden = YES;
+    return _backItem;
+}
+
+- (void)back {
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *currentVC = [self getCurrentVCFrom:rootViewController];
+    [currentVC.navigationController popViewControllerAnimated:YES];
+}
+
+- (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVC {
+    UIViewController *currentVC;
+    if ([rootVC presentedViewController]) {
+        rootVC = [rootVC presentedViewController];
+    }
+    if ([rootVC isKindOfClass:[UITabBarController class]]) {
+        currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVC selectedViewController]];
+    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
+        currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVC visibleViewController]];
+    } else {
+        currentVC = rootVC;
+    }
+    return currentVC;
 }
 
 - (UILabel *)titleLabel {
@@ -370,6 +428,22 @@
     _titleLabel.textColor = UIColor.blackColor;
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     return _titleLabel;
+}
+
+- (UIView *)left_items_view {
+    if (_left_items_view) {
+        return _left_items_view;
+    }
+    _left_items_view = [[UIView alloc] initWithFrame:CGRectMake(0, STATUS_BAR_HEIGHT, SCREEN_WIDTH / 2.0, NAVIGATIONBAR_HEIGHT)];
+    return _left_items_view;
+}
+
+- (UIView *)right_items_view {
+    if (_right_items_view) {
+        return _right_items_view;
+    }
+    _right_items_view = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2.0, STATUS_BAR_HEIGHT, SCREEN_WIDTH / 2.0, NAVIGATIONBAR_HEIGHT)];
+    return _right_items_view;
 }
 
 @end

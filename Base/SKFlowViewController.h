@@ -57,16 +57,22 @@ typedef void(^Click_method_callback)(NSInteger index);
 @interface SKNavigationBar : UIView
 
 //title
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, strong) NSString *title;
 
 //titleColor
-@property (nonatomic, copy) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *themeColor;
 
 //fontSize
 @property (nonatomic, assign) NSInteger fontSize;
 
 //backImage
-@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, strong) NSString *imageUrl;
+
+//left_items
+@property (nonatomic, strong) NSArray<UIButton *> *left_items;
+
+//right_items
+@property (nonatomic, strong) NSArray<UIButton *> *right_items;
 
 - (instancetype)init;
 
