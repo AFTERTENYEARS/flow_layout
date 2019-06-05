@@ -31,7 +31,7 @@
 }
 
 - (void)alert {
-    [self AlertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
+    [self alertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
         [self toast:@"left"];
     } right:@"right" rightCallback:^{
         [self toast:@"right"];

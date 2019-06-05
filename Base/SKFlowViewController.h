@@ -59,7 +59,7 @@ typedef void (^AlertActionCallback)(void);
 - (void)toast:(NSString *_Nullable)msg;
 
 //弹出选择框
-- (void)AlertWithTitle:(NSString * _Nonnull)title
+- (void)alertWithTitle:(NSString * _Nonnull)title
                msg:(NSString *_Nonnull)msg
             left:(NSString * _Nonnull)left
           leftCallback:(AlertActionCallback _Nonnull)leftCallback

@@ -281,7 +281,7 @@
     });
 }
 
-- (void)AlertWithTitle:(NSString * _Nonnull)title
+- (void)alertWithTitle:(NSString * _Nonnull)title
                    msg:(NSString *_Nonnull)msg
                   left:(NSString * _Nonnull)left
           leftCallback:(AlertActionCallback _Nonnull)leftCallback
