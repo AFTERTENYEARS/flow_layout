@@ -136,3 +136,4 @@ NS_ASSUME_NONNULL_END
 #define VIEW_BY_XIB(xibName) [[[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil] lastObject]
 #define VIEW_SET_FRAME(view, x, y, w, h) view.frame = CGRectMake(x, y, w, h)
 #define VIEW_BY_FRAME(x, y, w, h) [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)]
+#define VIEWS_BY_XIB(xibName) [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil]

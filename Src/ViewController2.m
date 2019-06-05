@@ -23,6 +23,7 @@
     SKNavigationBar *nav = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
     nav.imageUrl = @"nav_back";
     nav.themeColor = UIColor.whiteColor;
+    nav.right_items = @[VIEWS_BY_XIB(@"Views")[0], VIEWS_BY_XIB(@"Views")[1]];
     return nav;
 }
 

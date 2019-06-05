@@ -305,10 +305,11 @@
         self.backgroundColor = UIColor.whiteColor;
         self.clipsToBounds = YES;
         [self addSubview:self.backImageView];
+        [self addSubview:self.titleLabel];
         [self addSubview:self.left_items_view];
         [self addSubview:self.right_items_view];
         [self addSubview:self.backItem];
-        [self addSubview:self.titleLabel];
+        
     }
     return self;
 }
@@ -344,6 +345,9 @@
 }
 
 - (void)setLeft_items:(NSArray<UIButton *> *)left_items {
+    if (left_items.count > 0 && self.backItem.hidden == NO) {
+        self.backItem.hidden = YES;
+    }
     _left_items = left_items;
     for (UIView *subView in self.left_items_view.subviews) {
         [subView removeFromSuperview];
