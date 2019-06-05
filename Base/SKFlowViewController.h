@@ -50,7 +50,7 @@ typedef void(^Click_method_callback)(NSInteger index);
 //background_color(默认白色)
 - (UIColor *)return_background_color;
 
-//status_bar_style
+//status_bar_style(默认黑色)
 - (enum flow_status_bar_style)return_status_bar_style;
 
 //消息提示
