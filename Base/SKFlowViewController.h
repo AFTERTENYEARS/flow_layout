@@ -104,16 +104,12 @@ typedef void (^AlertActionCallback)(void);
 
 typedef void (^AlertActionCallback)(void);
 
-@property (nonatomic, strong) UIView * _Nonnull alertWrapper;
-@property (nonatomic, strong) UILabel * _Nonnull titlelabel;
-@property (nonatomic, strong) UILabel * _Nonnull messageLabel;
-@property (nonatomic, strong) UIView * _Nonnull horizontalLine;
-@property (nonatomic, strong) UIView * _Nonnull verticalLine;
-@property (nonatomic, strong) UIButton * _Nonnull leftButton;
-@property (nonatomic, strong) UIButton * _Nonnull rightButton;
-@property (nonatomic, copy) AlertActionCallback _Nonnull leftCallback;
-@property (nonatomic, copy) AlertActionCallback _Nonnull rightCallback;
-- (void)putUpWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message leftButton:(NSString * _Nonnull)leftButton leftCallback:(AlertActionCallback _Nonnull)leftCallback rightButton:(NSString * _Nonnull)rightButton rightCallback:(AlertActionCallback _Nonnull)rightCallback;
++ (void)alertWithTitle:(NSString * _Nonnull)title
+                   msg:(NSString *_Nonnull)msg
+                  left:(NSString * _Nonnull)left
+          leftCallback:(AlertActionCallback _Nonnull)leftCallback
+                 right:(NSString * _Nonnull)right
+         rightCallback:(AlertActionCallback _Nonnull)rightCallback;
 
 @end
 

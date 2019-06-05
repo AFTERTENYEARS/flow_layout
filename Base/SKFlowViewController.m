@@ -8,7 +8,6 @@
 @property (nonatomic, strong) UIView *bottom_bar;
 @property (nonatomic, assign) double foot_safe_height;
 
-
 @property (nonatomic, copy) Click_method_callback click_method;
 @property (nonatomic, strong) NSArray<UIView *> *flow_view_array;
 @property (nonatomic, strong) NSArray<NSNumber *> *flow_cellHeight_array;
@@ -287,9 +286,7 @@
           leftCallback:(AlertActionCallback _Nonnull)leftCallback
                  right:(NSString * _Nonnull)right
          rightCallback:(AlertActionCallback _Nonnull)rightCallback{
-    SKAlertView *alertView = [[SKAlertView alloc] init];
-    [alertView putUpWithTitle:title message:msg leftButton:left leftCallback:leftCallback rightButton:right rightCallback:rightCallback];
-    [[UIApplication sharedApplication].keyWindow addSubview:alertView];
+    [SKAlertView alertWithTitle:title msg:msg left:left leftCallback:leftCallback right:right rightCallback:rightCallback];
 }
 
 @end
@@ -482,6 +479,20 @@
 
 #pragma mark - SKAlert
 
+@interface SKAlertView ()
+
+@property (nonatomic, strong) UIView * _Nonnull alertWrapper;
+@property (nonatomic, strong) UILabel * _Nonnull titlelabel;
+@property (nonatomic, strong) UILabel * _Nonnull messageLabel;
+@property (nonatomic, strong) UIView * _Nonnull horizontalLine;
+@property (nonatomic, strong) UIView * _Nonnull verticalLine;
+@property (nonatomic, strong) UIButton * _Nonnull leftButton;
+@property (nonatomic, strong) UIButton * _Nonnull rightButton;
+@property (nonatomic, copy) AlertActionCallback _Nonnull leftCallback;
+@property (nonatomic, copy) AlertActionCallback _Nonnull rightCallback;
+
+@end
+
 @implementation SKAlertView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -497,6 +508,17 @@
         [self.alertWrapper addSubview:self.rightButton];
     }
     return self;
+}
+
++ (void)alertWithTitle:(NSString * _Nonnull)title
+                   msg:(NSString *_Nonnull)msg
+                  left:(NSString * _Nonnull)left
+          leftCallback:(AlertActionCallback _Nonnull)leftCallback
+                 right:(NSString * _Nonnull)right
+         rightCallback:(AlertActionCallback _Nonnull)rightCallback {
+    SKAlertView *alertView = [[SKAlertView alloc] init];
+    [alertView putUpWithTitle:title message:msg leftButton:left leftCallback:leftCallback rightButton:right rightCallback:rightCallback];
+    [[UIApplication sharedApplication].keyWindow addSubview:alertView];
 }
 
 - (void)putUpWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message leftButton:(NSString * _Nonnull)leftButton leftCallback:(AlertActionCallback _Nonnull)leftCallback rightButton:(NSString * _Nonnull)rightButton rightCallback:(AlertActionCallback _Nonnull)rightCallback{
