@@ -15,6 +15,10 @@
     return UIColor.lightGrayColor;
 }
 
+- (enum flow_status_bar_style)return_status_bar_style {
+    return flow_status_white;
+}
+
 - (UIView *)return_nav_bar {
     SKNavigationBar *nav = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
     nav.imageUrl = @"nav_back";

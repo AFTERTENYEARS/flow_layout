@@ -1,10 +1,3 @@
-//
-//  ViewController.m
-//  SKbase
-//
-//  Created by mac book pro on 2019/5/31.
-//  Copyright © 2019 com.SKbase.www. All rights reserved.
-//
 
 #import "ViewController.h"
 #import "ViewController2.h"

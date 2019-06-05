@@ -1,5 +1,4 @@
 
-
 #pragma mark - SKFlowViewController
 
 @interface SKFlowViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -19,6 +18,7 @@
 @property (nonatomic, assign) BOOL scroll_enabled;
 @property (nonatomic, assign) BOOL can_back_from_gesture;
 @property (nonatomic, strong) UIColor *background_color;
+@property (nonatomic, assign) enum flow_status_bar_style status_bar_style;
 
 
 @end
@@ -33,6 +33,9 @@
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = self.can_back_from_gesture ? YES : NO;
     }
+    
+    //状态栏颜色
+    self.navigationController.navigationBar.barStyle = self.status_bar_style == flow_status_black ? UIBarStyleDefault : UIBarStyleBlack;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -55,6 +58,7 @@
     if (self.bottom_bar) {
         [self.view addSubview:self.bottom_bar];
     }
+    
     self.view.backgroundColor = self.background_color;
     
     [self flowReload];
@@ -216,6 +220,15 @@
 
 - (UIColor *)return_background_color {
     return UIColor.whiteColor;
+}
+
+//status_bar_style
+- (enum flow_status_bar_style)status_bar_style {
+    return self.return_status_bar_style;
+}
+
+- (enum flow_status_bar_style)return_status_bar_style {
+    return flow_status_black;
 }
 
 //获取flow_TableView

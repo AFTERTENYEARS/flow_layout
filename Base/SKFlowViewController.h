@@ -1,8 +1,12 @@
 
-
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+enum flow_status_bar_style {
+    flow_status_black,
+    flow_status_white
+};
 
 typedef void(^Click_method_callback)(NSInteger index);
 
@@ -45,6 +49,9 @@ typedef void(^Click_method_callback)(NSInteger index);
 
 //background_color(默认白色)
 - (UIColor *)return_background_color;
+
+//status_bar_style
+- (enum flow_status_bar_style)return_status_bar_style;
 
 //消息提示
 - (void)toast:(NSString *_Nullable)msg;
@@ -114,7 +121,7 @@ NS_ASSUME_NONNULL_END
 #define JsonFromDic(dic) [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding]
 #define JsonFromModel(model) [model respondsToSelector:@selector(toDictionary)] ? [NetWork jsonFromDic:[model performSelector:@selector(toDictionary)] == nil ? [[NSDictionary alloc] init] : (NSDictionary *)[model performSelector:@selector(toDictionary)]] : @""
 #define DicFromJson(json) [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil]
-#define DicFromModel(json) [NSJSONSerialization JSONObjectWithData:[([model respondsToSelector:@selector(toDictionary)] ? [NetWork jsonFromDic:[model performSelector:@selector(toDictionary)] == nil ? [[NSDictionary alloc] init] : (NSDictionary *)[model performSelector:@selector(toDictionary)]] : @"") dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil]
+#define DicFromModel(model) [NSJSONSerialization JSONObjectWithData:[([model respondsToSelector:@selector(toDictionary)] ? [NetWork jsonFromDic:[model performSelector:@selector(toDictionary)] == nil ? [[NSDictionary alloc] init] : (NSDictionary *)[model performSelector:@selector(toDictionary)]] : @"") dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil]
 
 //仅适用于sdWebImage
 #define skImage(urlString, defaultName) sd_setImageWithURL:[NSURL URLWithString:urlString] placeholderImage:[UIImage imageNamed:defaultName]
