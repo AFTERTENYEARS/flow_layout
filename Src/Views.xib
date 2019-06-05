@@ -27,13 +27,5 @@
             </state>
             <point key="canvasLocation" x="-248" y="51"/>
         </button>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wgL-gG-1i0">
-            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Button">
-                <color key="titleColor" red="0.792156862745098" green="0.79265695810317993" blue="0.79214423894882202" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            </state>
-            <point key="canvasLocation" x="-107" y="133"/>
-        </button>
     </objects>
 </document>

@@ -21,12 +21,14 @@
 
 - (UIView *)return_nav_bar {
     SKNav *nav = [SKNav backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
-    nav.imageUrl = @"nav_back";
+    nav.imageUrl = @"nav_back_image";
     nav.themeColor = UIColor.whiteColor;
     
-    UIButton *button = VIEWS_BY_XIB(@"Views")[1];
-    [button addTarget:self action:@selector(alert) forControlEvents:UIControlEventTouchUpInside];
-    nav.right_items = @[VIEWS_BY_XIB(@"Views")[0], button];
+    UIButton *button0 = VIEWS_BY_XIB(@"Views")[0];
+    UIButton *button1 = VIEWS_BY_XIB(@"Views")[1];
+    [button1 addTarget:self action:@selector(alert) forControlEvents:UIControlEventTouchUpInside];
+    nav.right_items = @[button0, button1];
+    
     return nav;
 }
 
