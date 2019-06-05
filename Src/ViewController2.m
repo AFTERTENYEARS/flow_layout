@@ -20,11 +20,22 @@
 }
 
 - (UIView *)return_nav_bar {
-    SKNavigationBar *nav = [SKNavigationBar backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
+    SKNav *nav = [SKNav backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
     nav.imageUrl = @"nav_back";
     nav.themeColor = UIColor.whiteColor;
-    nav.right_items = @[VIEWS_BY_XIB(@"Views")[0], VIEWS_BY_XIB(@"Views")[1]];
+    
+    UIButton *button = VIEWS_BY_XIB(@"Views")[1];
+    [button addTarget:self action:@selector(alert) forControlEvents:UIControlEventTouchUpInside];
+    nav.right_items = @[VIEWS_BY_XIB(@"Views")[0], button];
     return nav;
+}
+
+- (void)alert {
+    [self AlertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
+        [self toast:@"left"];
+    } right:@"right" rightCallback:^{
+        [self toast:@"right"];
+    }];
 }
 
 - (UIView *)return_bottom_bar {

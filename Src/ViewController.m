@@ -13,7 +13,7 @@
 }
 
 - (UIView *)return_nav_bar {
-    SKNavigationBar *nav = [SKNavigationBar new];
+    SKNav *nav = [SKNav new];
     nav.title = @"主页";
     return nav;
 }

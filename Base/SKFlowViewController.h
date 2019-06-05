@@ -10,6 +10,8 @@ enum flow_status_bar_style {
 
 typedef void(^Click_method_callback)(NSInteger index);
 
+typedef void (^AlertActionCallback)(void);
+
 #pragma mark - SKFlowViewController
 
 @interface SKFlowViewController : UIViewController
@@ -56,12 +58,19 @@ typedef void(^Click_method_callback)(NSInteger index);
 //消息提示
 - (void)toast:(NSString *_Nullable)msg;
 
+//弹出选择框
+- (void)AlertWithTitle:(NSString * _Nonnull)title
+               msg:(NSString *_Nonnull)msg
+            left:(NSString * _Nonnull)left
+          leftCallback:(AlertActionCallback _Nonnull)leftCallback
+           right:(NSString * _Nonnull)right
+     rightCallback:(AlertActionCallback _Nonnull)rightCallback;
 @end
 
 
 
-#pragma mark - SKNavigationBar
-@interface SKNavigationBar : UIView
+#pragma mark - SKNav
+@interface SKNav : UIView
 
 //title
 @property (nonatomic, strong) NSString *title;
@@ -83,7 +92,28 @@ typedef void(^Click_method_callback)(NSInteger index);
 
 - (instancetype)init;
 
-+ (SKNavigationBar *)backStyleWithTitle:(NSString *)title;
++ (SKNav *)backStyleWithTitle:(NSString *)title;
+
+@end
+
+
+
+#pragma mark - SKAlertView
+
+@interface SKAlertView : UIView
+
+typedef void (^AlertActionCallback)(void);
+
+@property (nonatomic, strong) UIView * _Nonnull alertWrapper;
+@property (nonatomic, strong) UILabel * _Nonnull titlelabel;
+@property (nonatomic, strong) UILabel * _Nonnull messageLabel;
+@property (nonatomic, strong) UIView * _Nonnull horizontalLine;
+@property (nonatomic, strong) UIView * _Nonnull verticalLine;
+@property (nonatomic, strong) UIButton * _Nonnull leftButton;
+@property (nonatomic, strong) UIButton * _Nonnull rightButton;
+@property (nonatomic, copy) AlertActionCallback _Nonnull leftCallback;
+@property (nonatomic, copy) AlertActionCallback _Nonnull rightCallback;
+- (void)putUpWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message leftButton:(NSString * _Nonnull)leftButton leftCallback:(AlertActionCallback _Nonnull)leftCallback rightButton:(NSString * _Nonnull)rightButton rightCallback:(AlertActionCallback _Nonnull)rightCallback;
 
 @end
 
