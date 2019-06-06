@@ -41,8 +41,6 @@
 }
 
 - (void)alert {
-    self.count += 1;
-    [self flowReload];
     [self alertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
         [self toast:@"leftButtonClicked"];
     } right:@"right" rightCallback:^{
@@ -54,22 +52,22 @@
     
     //添加一个column
     SKColumn *column = [[SKColumn alloc] init];
-    column.sk_column_childs = @[VIEWS_BY_XIB(@"Views")[2],
+    column.sk_column_childs = @[VIEW_INDEX_BY_XIB(@"Views", 2),
                                 SPACE_H(10),
-                                VIEWS_BY_XIB(@"Views")[3],
+                                VIEW_INDEX_BY_XIB(@"Views", 3),
                                 SPACE_H(10),
-                                VIEWS_BY_XIB(@"Views")[4]];
+                                VIEW_INDEX_BY_XIB(@"Views", 4)];
     column.alignment = sk_column_right;
     
     //添加一个row
     SKRow *row = [[SKRow alloc] init];
-    row.sk_row_childs = @[VIEWS_BY_XIB(@"Views")[5],
+    row.sk_row_childs = @[VIEW_INDEX_BY_XIB(@"Views", 5),
                           SPACE_W(15),
-                          VIEWS_BY_XIB(@"Views")[6],
+                          VIEW_INDEX_BY_XIB(@"Views", 6),
                           SPACE_W(15),
-                          VIEWS_BY_XIB(@"Views")[7],
+                          VIEW_INDEX_BY_XIB(@"Views", 7),
                           SPACE_W(15),
-                          VIEWS_BY_XIB(@"Views")[8]];
+                          VIEW_INDEX_BY_XIB(@"Views", 8)];
     row.alignment = sk_row_bottom;
     
     if (self.count % 2 == 0) {

@@ -161,6 +161,7 @@ NS_ASSUME_NONNULL_END
 //加载xib
 #define VIEW_BY_XIB(xibName) [[[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil] lastObject]
 #define VIEWS_BY_XIB(xibName) [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil]
+#define VIEW_INDEX_BY_XIB(xibName, index) [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil].count > index ? [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil][index] : [[UIView alloc] init]
 #define VIEW_BY_FRAME(x, y, w, h) [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)]
 #define SPACE_H(height) [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, height)]
 #define SPACE_W(width) [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 1)]
