@@ -57,7 +57,7 @@
                                 VIEW_INDEX_BY_XIB(@"Views", 3),
                                 SPACE_H(10),
                                 VIEW_INDEX_BY_XIB(@"Views", 4)];
-    column.alignment = sk_column_right;
+    column.alignment = random() % 3;//sk_column_right;
     
     //添加一个row
     SKRow *row = [[SKRow alloc] init];
@@ -68,7 +68,8 @@
                           VIEW_INDEX_BY_XIB(@"Views", 7),
                           SPACE_W(15),
                           VIEW_INDEX_BY_XIB(@"Views", 8)];
-    row.alignment = sk_row_bottom;
+    row.alignment = random() % 3;//sk_row_bottom;
+    row.direction = random() % 2;//end;
     
     if (self.count % 2 == 0) {
         return @[row, column];

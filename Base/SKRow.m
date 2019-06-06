@@ -9,6 +9,7 @@
         self.backgroundColor = UIColor.clearColor;
         self.clipsToBounds = YES;
         self.alignment = sk_row_top;
+        self.direction = start;
         self.sk_row_width = SCREEN_WIDTH;
         self.sk_row_height = 0;
     }
@@ -18,40 +19,29 @@
 - (void)setSk_row_width:(double)sk_row_width {
     _sk_row_width = sk_row_width;
     self.frame = CGRectMake(0, 0, sk_row_width, self.sk_row_height);
-    self.alignment = _alignment;
+    [self skRowLayout];
 }
 
 - (void)setSk_row_height:(double)sk_row_height {
     _sk_row_height = sk_row_height;
     self.frame = CGRectMake(0, 0, self.sk_row_width, sk_row_height);
-    self.alignment = _alignment;
+    [self skRowLayout];
 }
 
-- (void)setAlignment:(enum SKColumn_alignment)alignment {
+- (void)setAlignment:(enum SKRow_alignment)alignment {
     _alignment = alignment;
-    switch (alignment) {
-        case sk_row_top:
-            for (UIView *child_view in self.sk_row_childs) {
-                child_view.frame = CGRectMake(VIEW_LEFT(child_view), 0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-            }
-            break;
-        case sk_row_bottom:
-            for (UIView *child_view in self.sk_row_childs) {
-                child_view.frame = CGRectMake(VIEW_LEFT(child_view), VIEW_HEIGHT(self) - VIEW_HEIGHT(child_view), VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-            }
-            break;
-            
-        default:
-            for (UIView *child_view in self.sk_row_childs) {
-                child_view.frame = CGRectMake(VIEW_LEFT(child_view), (VIEW_HEIGHT(self) - VIEW_HEIGHT(child_view)) / 2.0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-            }
-            break;
-    }
+    [self skRowLayout];
+}
+
+- (void)setDirection:(enum SKRow_direction)direction {
+    _direction = direction;
+    [self skRowLayout];
 }
 
 - (void)setSk_row_childs:(NSArray<UIView *> *)sk_row_childs {
-    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     _sk_row_childs = sk_row_childs;
+    
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     double max_height = 0;
     for (UIView *child_view in sk_row_childs) {
@@ -64,25 +54,50 @@
         _sk_row_height = max_height;
     }
     
-    double childs_total_width = 0;
     for (UIView *child_view in sk_row_childs) {
-        
-        switch (self.alignment) {
-            case sk_row_top:
-                child_view.frame = CGRectMake(childs_total_width, 0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-                break;
-            case sk_row_bottom:
-                child_view.frame = CGRectMake(childs_total_width, self.sk_row_height - VIEW_HEIGHT(child_view), VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-                break;
-            default:
-                child_view.frame = CGRectMake(childs_total_width, (self.sk_row_height - VIEW_HEIGHT(child_view)) / 2.0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
-                break;
-        }
         [self addSubview:child_view];
-        childs_total_width += VIEW_WIDTH(child_view);
+    }
+    self.frame = CGRectMake(0, 0, self.sk_row_width, self.sk_row_height);
+    [self skRowLayout];
+}
+
+- (void)skRowLayout {
+    double leftWidth = self.sk_row_width;
+    for (UIView *child_view in self.sk_row_childs) {
+        leftWidth -= VIEW_WIDTH(child_view);
+    }
+    if (leftWidth < 0) {
+        leftWidth = 0;
     }
     
-    self.frame = CGRectMake(0, 0, self.sk_row_width, self.sk_row_height);
+    double childs_total_width = 0;
+    
+    for (UIView *child_view in self.sk_row_childs) {
+        switch (self.alignment) {
+            case sk_row_top:
+                if (_direction == start) {
+                    child_view.frame = CGRectMake(childs_total_width, 0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                } else {
+                    child_view.frame = CGRectMake(leftWidth + childs_total_width, 0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                }
+                break;
+            case sk_row_bottom:
+                if (_direction == start) {
+                    child_view.frame = CGRectMake(childs_total_width, _sk_row_height - VIEW_HEIGHT(child_view), VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                } else {
+                    child_view.frame = CGRectMake(leftWidth + childs_total_width, _sk_row_height - VIEW_HEIGHT(child_view), VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                }
+                break;
+            default:
+                if (_direction == start) {
+                    child_view.frame = CGRectMake(childs_total_width, (_sk_row_height - VIEW_HEIGHT(child_view)) / 2.0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                } else {
+                    child_view.frame = CGRectMake(leftWidth + childs_total_width, (_sk_row_height - VIEW_HEIGHT(child_view)) / 2.0, VIEW_WIDTH(child_view), VIEW_HEIGHT(child_view));
+                }
+                break;
+        }
+        childs_total_width += VIEW_WIDTH(child_view);
+    }
 }
 
 @end

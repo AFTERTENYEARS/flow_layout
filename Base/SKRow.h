@@ -25,13 +25,24 @@ enum SKRow_alignment {
     sk_row_bottom
 };
 
+enum SKRow_direction {
+    start,
+    end
+};
+
 #import <UIKit/UIKit.h>
 
 @interface SKRow : UIView
 
+//默认为屏宽
 @property (nonatomic, assign) double sk_row_width;
+//默认为最高的子viewh高度
 @property (nonatomic, assign) double sk_row_height;
-@property (nonatomic, assign) enum SKColumn_alignment alignment;
+//默认上对齐
+@property (nonatomic, assign) enum SKRow_alignment alignment;
+//默认从左开始
+@property (nonatomic, assign) enum SKRow_direction direction;
+//默认为空
 @property (nonatomic, strong) NSArray<UIView *> *sk_row_childs;
 
 - (instancetype)init;

@@ -29,8 +29,11 @@ enum SKColumn_alignment {
 
 @interface SKColumn : UIView
 
+//默认屏宽
 @property (nonatomic, assign) double sk_column_width;
+//默认左对齐
 @property (nonatomic, assign) enum SKColumn_alignment alignment;
+//默认为空
 @property (nonatomic, strong) NSArray<UIView *> *sk_column_childs;
 
 - (instancetype)init;
