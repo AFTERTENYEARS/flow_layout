@@ -3,12 +3,15 @@
 
 @interface ViewController2 ()
 
+@property (nonatomic, assign) NSInteger count;
+
 @end
 
 @implementation ViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self flowReload];
 }
 
 - (UIColor *)return_background_color {
@@ -20,11 +23,11 @@
 }
 
 - (UIView *)return_nav_bar {
-    SKNav *nav = [SKNav backStyleWithTitle:[NSString stringWithFormat:@"第 %@ 行", self.title]];
+    SKNav *nav = [SKNav backStyleWithTitle:[NSString stringWithFormat:@"第 %ld 行", self.count]];
     nav.imageUrl = @"nav_back_image";
     nav.themeColor = UIColor.whiteColor;
-    
     UIButton *button0 = VIEWS_BY_XIB(@"Views")[0];
+    [button0 addTarget:self action:@selector(change) forControlEvents:UIControlEventTouchUpInside];
     UIButton *button1 = VIEWS_BY_XIB(@"Views")[1];
     [button1 addTarget:self action:@selector(alert) forControlEvents:UIControlEventTouchUpInside];
     nav.right_items = @[button0, button1];
@@ -32,7 +35,14 @@
     return nav;
 }
 
+- (void)change {
+    self.count += 1;
+    [self flowReload];
+}
+
 - (void)alert {
+    self.count += 1;
+    [self flowReload];
     [self alertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
         [self toast:@"leftButtonClicked"];
     } right:@"right" rightCallback:^{
@@ -62,12 +72,16 @@
                           VIEWS_BY_XIB(@"Views")[8]];
     row.alignment = sk_row_bottom;
     
+    if (self.count % 2 == 0) {
+        return @[row, column];
+    }
+    
     return @[column, row];
 }
 
 - (UIView *)return_bottom_bar {
     UIView *view = VIEW_BY_FRAME(0, 0, SCREEN_WIDTH, BOTTOM_BAR_HEIGHT + 44);
-    view.backgroundColor = UIColor.brownColor;
+    view.backgroundColor = COLOR_RANDOM;
     return view;
 }
 

@@ -66,9 +66,16 @@
 //刷新flow_TableView
 - (void)flowReload {
     //frame
-    _nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(self.nav_bar));
-    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(self.nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(self.nav_bar) - VIEW_HEIGHT(self.bottom_bar));
-    _bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(self.bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(self.bottom_bar));
+    _nav_bar = self.nav_bar;
+    [_nav_bar removeFromSuperview];
+    _nav_bar.frame = CGRectMake(0, 0, SCREEN_WIDTH, VIEW_HEIGHT(_nav_bar));
+    [self.view addSubview:_nav_bar];
+    
+    _flow_TableView.frame = CGRectMake(0, VIEW_HEIGHT(_nav_bar), SCREEN_WIDTH, SCREEN_HEIGHT - VIEW_HEIGHT(_nav_bar) - VIEW_HEIGHT(self.bottom_bar));
+    _bottom_bar = self.bottom_bar;
+    [_bottom_bar removeFromSuperview];
+    _bottom_bar.frame = CGRectMake(0, SCREEN_HEIGHT - VIEW_HEIGHT(_bottom_bar), SCREEN_WIDTH, VIEW_HEIGHT(_bottom_bar));
+    [self.view addSubview:_bottom_bar];
     //foot_safe_height
     if (self.foot_safe_height > 0) {
        _flow_TableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.foot_safe_height)];
@@ -333,6 +340,8 @@
 - (void)setTitle:(NSString *)title {
     _title = title;
     self.titleLabel.text = title;
+    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setThemeColor:(UIColor *)themeColor {
