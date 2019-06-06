@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A13468322A8E52000AA65A3 /* SKRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A13468122A8E52000AA65A3 /* SKRow.m */; };
 		0A23C4C122A12782002398AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A23C4C022A12782002398AC /* AppDelegate.m */; };
 		0A23C4C422A12782002398AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A23C4C322A12782002398AC /* ViewController.m */; };
 		0A23C4C922A12784002398AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A23C4C822A12784002398AC /* Assets.xcassets */; };
@@ -15,10 +16,14 @@
 		0A56CEA622A7BE370006A051 /* Views.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A56CEA522A7BE370006A051 /* Views.xib */; };
 		0A5CD99422A4BA7B00030BEB /* SKFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5CD99322A4BA7B00030BEB /* SKFlowViewController.m */; };
 		0A5CD99C22A5161000030BEB /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5CD99B22A5161000030BEB /* ViewController2.m */; };
+		0A6D019D22A8F81C00636063 /* SKColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D019C22A8F81C00636063 /* SKColumn.m */; };
 		4AA4E0E2DF3742ED2766AC7E /* libPods-SKbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DEDA91CDDA4DC88F511A8D /* libPods-SKbase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A13467E22A8BAD000AA65A3 /* SKColumn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKColumn.h; sourceTree = "<group>"; };
+		0A13468122A8E52000AA65A3 /* SKRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKRow.m; sourceTree = "<group>"; };
+		0A13468222A8E52000AA65A3 /* SKRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRow.h; sourceTree = "<group>"; };
 		0A23C4BC22A12782002398AC /* SKbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A23C4BF22A12782002398AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A23C4C022A12782002398AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		0A5CD99322A4BA7B00030BEB /* SKFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKFlowViewController.m; sourceTree = "<group>"; };
 		0A5CD99A22A5161000030BEB /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		0A5CD99B22A5161000030BEB /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		0A6D019C22A8F81C00636063 /* SKColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKColumn.m; sourceTree = "<group>"; };
 		2DEA6A42527C041443621F96 /* Pods-SKbase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKbase.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKbase/Pods-SKbase.release.xcconfig"; sourceTree = "<group>"; };
 		80DEDA91CDDA4DC88F511A8D /* libPods-SKbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SKbase.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12C764F997DCCF05CFDAADB /* Pods-SKbase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKbase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKbase/Pods-SKbase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +108,10 @@
 			children = (
 				0A5CD99222A4BA7B00030BEB /* SKFlowViewController.h */,
 				0A5CD99322A4BA7B00030BEB /* SKFlowViewController.m */,
+				0A13467E22A8BAD000AA65A3 /* SKColumn.h */,
+				0A6D019C22A8F81C00636063 /* SKColumn.m */,
+				0A13468222A8E52000AA65A3 /* SKRow.h */,
+				0A13468122A8E52000AA65A3 /* SKRow.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -219,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A13468322A8E52000AA65A3 /* SKRow.m in Sources */,
+				0A6D019D22A8F81C00636063 /* SKColumn.m in Sources */,
 				0A23C4C422A12782002398AC /* ViewController.m in Sources */,
 				0A23C4CF22A12784002398AC /* main.m in Sources */,
 				0A5CD99C22A5161000030BEB /* ViewController2.m in Sources */,

@@ -98,6 +98,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *flowTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"FlowTableViewCell"];
+    flowTableViewCell.backgroundColor = UIColor.clearColor;
     flowTableViewCell.selectionStyle = _cell_click_effect ? UITableViewCellSelectionStyleDefault: UITableViewCellSelectionStyleNone;
     [flowTableViewCell.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [flowTableViewCell addSubview:_flow_view_array[indexPath.row]];

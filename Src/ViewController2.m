@@ -34,10 +34,39 @@
 
 - (void)alert {
     [self alertWithTitle:@"title" msg:@"msg" left:@"left" leftCallback:^{
-        [self toast:@"left"];
+        [self toast:@"leftButtonClicked"];
     } right:@"right" rightCallback:^{
-        [self toast:@"right"];
+        [self toast:@"rightButtonClicked"];
     }];
+}
+
+- (NSArray<UIView *> *)return_flow_view_array {
+    NSMutableArray *views = [[NSMutableArray alloc] init];
+    
+    //添加一个column
+    SKColumn *column = [[SKColumn alloc] init];
+    UIView *v11 = VIEWS_BY_XIB(@"Views")[2];
+    UIView *v22 = VIEWS_BY_XIB(@"Views")[3];
+    UIView *v33 = VIEWS_BY_XIB(@"Views")[4];
+    
+    column.sk_column_childs = @[v11, v22, v33];
+    column.alignment = sk_column_right;
+    
+    [views addObject:column];
+    
+    //添加一个row
+    SKRow *row = [[SKRow alloc] init];
+    UIView *v44 = VIEWS_BY_XIB(@"Views")[5];
+    UIView *v55 = VIEWS_BY_XIB(@"Views")[6];
+    UIView *v66 = VIEWS_BY_XIB(@"Views")[7];
+    UIView *v77 = VIEWS_BY_XIB(@"Views")[8];
+    
+    row.sk_row_childs = @[v44, v55, v66, v77];
+    row.alignment = sk_row_bottom;
+    
+    [views addObject:row];
+    
+    return views;
 }
 
 - (UIView *)return_bottom_bar {
