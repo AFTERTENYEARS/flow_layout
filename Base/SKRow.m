@@ -79,7 +79,7 @@
                 break;
         }
         [self addSubview:child_view];
-        childs_total_width += VIEW_HEIGHT(child_view);
+        childs_total_width += VIEW_WIDTH(child_view);
     }
     
     self.frame = CGRectMake(0, 0, self.sk_row_width, self.sk_row_height);

@@ -12,7 +12,7 @@
 }
 
 - (UIColor *)return_background_color {
-    return UIColor.lightGrayColor;
+    return UIColor.whiteColor;
 }
 
 - (enum flow_status_bar_style)return_status_bar_style {
@@ -41,32 +41,28 @@
 }
 
 - (NSArray<UIView *> *)return_flow_view_array {
-    NSMutableArray *views = [[NSMutableArray alloc] init];
     
     //添加一个column
     SKColumn *column = [[SKColumn alloc] init];
-    UIView *v11 = VIEWS_BY_XIB(@"Views")[2];
-    UIView *v22 = VIEWS_BY_XIB(@"Views")[3];
-    UIView *v33 = VIEWS_BY_XIB(@"Views")[4];
-    
-    column.sk_column_childs = @[v11, v22, v33];
+    column.sk_column_childs = @[VIEWS_BY_XIB(@"Views")[2],
+                                SPACE_H(10),
+                                VIEWS_BY_XIB(@"Views")[3],
+                                SPACE_H(10),
+                                VIEWS_BY_XIB(@"Views")[4]];
     column.alignment = sk_column_right;
-    
-    [views addObject:column];
     
     //添加一个row
     SKRow *row = [[SKRow alloc] init];
-    UIView *v44 = VIEWS_BY_XIB(@"Views")[5];
-    UIView *v55 = VIEWS_BY_XIB(@"Views")[6];
-    UIView *v66 = VIEWS_BY_XIB(@"Views")[7];
-    UIView *v77 = VIEWS_BY_XIB(@"Views")[8];
-    
-    row.sk_row_childs = @[v44, v55, v66, v77];
+    row.sk_row_childs = @[VIEWS_BY_XIB(@"Views")[5],
+                          SPACE_W(15),
+                          VIEWS_BY_XIB(@"Views")[6],
+                          SPACE_W(15),
+                          VIEWS_BY_XIB(@"Views")[7],
+                          SPACE_W(15),
+                          VIEWS_BY_XIB(@"Views")[8]];
     row.alignment = sk_row_bottom;
     
-    [views addObject:row];
-    
-    return views;
+    return @[column, row];
 }
 
 - (UIView *)return_bottom_bar {

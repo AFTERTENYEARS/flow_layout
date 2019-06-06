@@ -73,7 +73,9 @@
             <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="0.26033133269999997" green="0.27639782429999998" blue="0.54956895110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <state key="normal" title="开始"/>
+            <state key="normal" title="开始">
+                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
             <point key="canvasLocation" x="-534" y="445"/>
         </button>
     </objects>

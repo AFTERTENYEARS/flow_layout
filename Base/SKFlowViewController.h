@@ -160,6 +160,8 @@ NS_ASSUME_NONNULL_END
 
 //加载xib
 #define VIEW_BY_XIB(xibName) [[[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil] lastObject]
-#define VIEW_SET_FRAME(view, x, y, w, h) view.frame = CGRectMake(x, y, w, h)
-#define VIEW_BY_FRAME(x, y, w, h) [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)]
 #define VIEWS_BY_XIB(xibName) [[NSBundle mainBundle] loadNibNamed:xibName owner:self options:nil]
+#define VIEW_BY_FRAME(x, y, w, h) [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)]
+#define SPACE_H(height) [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, height)]
+#define SPACE_W(width) [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 1)]
+
