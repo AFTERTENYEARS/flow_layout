@@ -121,6 +121,12 @@ NS_ASSUME_NONNULL_END
 + (UIColor *_Nullable)colorWithRGBHexString:(NSString *_Nullable)hexString alpha:(CGFloat)alpha;
 @end
 
+@interface UIButton (colorImage)
+//根据颜色设置背景
+- (void)defaultColor: (UIColor *_Nullable)defaultColor highlightedColor: (UIColor *_Nullable)highlightedColor;
+
+@end
+
 
 //UIView
 #define SCREEN_WIDTH                [[UIScreen mainScreen] bounds].size.width

@@ -18,13 +18,11 @@
 
 - (void)setSk_row_width:(double)sk_row_width {
     _sk_row_width = sk_row_width;
-    self.frame = CGRectMake(0, 0, sk_row_width, self.sk_row_height);
     [self skRowLayout];
 }
 
 - (void)setSk_row_height:(double)sk_row_height {
     _sk_row_height = sk_row_height;
-    self.frame = CGRectMake(0, 0, self.sk_row_width, sk_row_height);
     [self skRowLayout];
 }
 
@@ -62,6 +60,8 @@
 }
 
 - (void)skRowLayout {
+    self.frame = CGRectMake(0, 0, self.sk_row_width, self.sk_row_height);
+    
     double leftWidth = self.sk_row_width;
     for (UIView *child_view in self.sk_row_childs) {
         leftWidth -= VIEW_WIDTH(child_view);
